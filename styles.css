@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-
+body {
+  /* overflow-y: hidden;  */
+  overflow-x: hidden;
+  /* Hide horizontal scrollbar */
+}
 .flexcontainer{
   display: flex;
   justify-content: center;
