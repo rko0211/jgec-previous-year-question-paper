@@ -21,19 +21,20 @@
     margin-top:10px ;
    
 } 
-.common{
-    flex: 1;
-    border-radius: 5px;
-    max-width: 410px;
-    /* height: 490px; */
-    text-align: center;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    flex-wrap: wrap;
-    box-shadow: -1px 0 10px hsl(0, 0%, 0%);
-    margin: 20px 20px;
-    margin-bottom: 30px;
-  
+.common {
+  flex: 1;
+  border-radius: 10px;
+  max-width: 400px;
+  /* height: 490px; */
+  text-align: center;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  flex-wrap: wrap;
+  box-shadow: -1px 0 10px hsl(0, 0%, 0%);
+  margin: 23px 23px;
+  margin-bottom: 30px;
+  padding: 5px;
+
 }
 
 .btn{
@@ -45,11 +46,9 @@
     margin-top: 10px;
     margin-bottom: 25px;
 }
- .yrimg
-{
-
-  border-radius: 3px;
-  width: 410px;
+.yrimg {
+  border-radius: 10px;
+  width: 388px;
   height: 250px;
 }
 .yrpage{
@@ -57,11 +56,11 @@
   color: #f2f2f2;
   font-size: 27px;
 }
-.about{
+.about {
   padding-left: 2px;
   padding-right: 2px;
   font-size: 1rem;
-  font-weight:550;
+  font-weight: 550;
 }
 .common:hover{
   background-color: rgb(62, 62, 62);
