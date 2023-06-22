@@ -1,0 +1,153 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    
+
+    font-family: "Lato", sans-serif;
+    background-color: powderblue
+
+}
+.cover{
+    height: 60px;
+}
+
+.nav {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #d6caca;
+    height: 60px;
+    overflow: auto;
+    text-align: center;
+    display: flex;
+    position: fixed;
+    margin-bottom: 2000px;
+}
+
+.nav a {
+  
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+
+.nav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.nav a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+.box{
+   
+   /* border: 2px solid black; */
+    text-align: center;
+  
+    margin-top: 20px;
+
+   
+    
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: center;
+    gap: 30px;
+}
+a{
+    text-decoration: none;
+}
+
+.card{
+   
+    flex: 1 ;
+    margin: 20px 20px;
+    background: #ffff;
+    box-shadow: 0 0 15px rgb(0,0,0,0.5);
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+    align-self: normal;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;
+   width:  400px;
+   /* height: 300px; */
+}
+.hd{
+    text-align: center;
+   margin: 20px;
+}
+.hd h1{
+     font-size: 1.3rem;
+   
+}
+.card img{
+    flex: 1;
+    
+     height: 100px;
+    width: 300px;
+    border-radius: 20px;
+   
+    margin-top: 10px;
+}
+
+.heading{
+    margin: 10px 0;
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+  .card p{
+    font-size: 15px;
+    -webkit-line-clamp: 3;
+    line-height: 20px; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+      /* margin-bottom: 30px; */
+  }
+  .btn{
+    display: inline-block;
+    background-color: red;
+    margin-top: auto;
+    padding: 10px 20px;
+    border-radius: 5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    -ms-border-radius:5px;
+    -o-border-radius:5px;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 10px;
+  }
+  .card:hover{
+    /* transform: scale(1.01);
+
+    transition: all 0.2s ease; */
+    border-radius: greenyellow;
+    box-shadow: 0 5px 50px greenyellow;
+  }
+  .btn:hover{
+   background-color: transparent;
+   color: blue;
+   border: 2px solid red;
+    transform: scale(1.04);
+    transition: all 0.2s ease;
+  }
+
+
+

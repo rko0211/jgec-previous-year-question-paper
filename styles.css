@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+.flexcontainer{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.yr{
+    font-weight: bold;
+    font-size: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.myr{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top:10px ;
+   
+} 
+.common{
+    flex: 1;
+    border-radius: 5px;
+    max-width: 410px;
+    /* height: 490px; */
+    text-align: center;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    flex-wrap: wrap;
+    box-shadow: -1px 0 10px hsl(0, 0%, 0%);
+    margin: 20px 20px;
+    margin-bottom: 30px;
+  
+}
+
+.btn{
+    padding: 5px;
+    background-color: #ff6600;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+ .yrimg
+{
+
+  border-radius: 3px;
+  width: 410px;
+  height: 250px;
+}
+.yrpage{
+  text-decoration: none;
+  color: #f2f2f2;
+  font-size: 27px;
+}
+.about{
+  padding-left: 2px;
+  padding-right: 2px;
+  font-size: 1rem;
+  font-weight:550;
+}
+.common:hover{
+  background-color: rgb(62, 62, 62);
+  color: white;
+  transform: scale(1.03);
+  transition: all 0.4s ease;
+}
+.btn:hover{
+  background-color: blue;
+  transform: scale(1.03);
+  transition: all 0.2s ease;
+}
+.yrpage:hover{
+  color: black;
+  color: #000000;
+  font-weight: bold;
+}
+
+.blink {
+  padding-top: 20px;
+  animation: blinker 1.5s linear infinite;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+}
+@keyframes blinker {
+  50% {
+      opacity: 0;
+  }
+}
+.rag{
+  margin-top: 20px;
+  
+    padding-top: 20px;
+    animation: blinker 1.5s linear infinite;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+
+}
+
+@keyframes blinker {
+  50% {
+      opacity: 0;
+  }
+}
+
+
+
+
+
