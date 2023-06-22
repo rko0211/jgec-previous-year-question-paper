@@ -4,7 +4,7 @@
 }
 body {
     font-family: 'Sono', sans-serif;
-    
+
   }
   .mainbody{
     box-sizing: border-box;
@@ -51,7 +51,7 @@ body {
   flex: 1;
   /* flex-basis: 200px; */
    height: 250px;
-  width: 300px;
+  width: 320px;
   border-radius: 20px;
   /* border: 1px solid lightblue; */
   margin-top: 10px;
@@ -96,7 +96,6 @@ line-height: 20px;
   transform: scale(1.04);
   transition: all 0.2s ease;
 }
-
 
 
 body{
