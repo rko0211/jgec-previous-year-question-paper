@@ -103,7 +103,7 @@ header ul li a:hover {
 .common {
   flex: 1;
   border-radius: 10px;
-  max-width: 400px;
+  max-width: 410px;
   text-align: center;
   border-radius: 5px;
   background-color: #f2f2f2;
@@ -131,7 +131,7 @@ header ul li a:hover {
   border-radius: 10px;
   /* width: 388px;
   height: 250px; */
-  width: 385px;
+  width: 390px;
   height: 250px;
 
 }
@@ -482,10 +482,11 @@ footer .f-ele1 span {
 
 
 /* Card media queries */
-@media(max-width:370px){
+@media(max-width:384px){
   .common
   {
     width: 280px;
+    margin: auto;
   }
   .yrimg{
     width: 98%;
