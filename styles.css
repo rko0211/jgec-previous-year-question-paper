@@ -482,7 +482,7 @@ footer .f-ele1 span {
 
 
 /* Card media queries */
-@media(max-width:430px){
+@media(max-width:500px){
   .common {
  
     margin: auto;
