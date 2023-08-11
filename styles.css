@@ -482,25 +482,23 @@ footer .f-ele1 span {
 
 
 /* Card media queries */
-@media(max-width:500px){
+@media(max-width:400px) {
   .common {
- 
-    margin: auto;
-   margin-bottom: 20px;
-  }
-}
-@media(max-width:388px){
- .common {
     
     width: 100%;
     margin: auto;
+    margin-bottom: 45px;
   }
-  .yrimg{
+
+  .yrimg {
     width: 98%;
   }
-   .flexcontainer{
+
+  .flexcontainer {
     flex-direction: column;
+
   }
+
 }
 
 
