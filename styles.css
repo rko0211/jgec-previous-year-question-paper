@@ -489,10 +489,10 @@ footer .f-ele1 span {
    margin-bottom: 20px;
   }
 }
-@media(max-width:384px){
-  .common
-  {
-    width: 280px;
+@media(max-width:388px){
+ .common {
+    
+    width: 100%;
     margin: auto;
   }
   .yrimg{
