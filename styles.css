@@ -10,8 +10,6 @@
 
 body {
   min-height: 100vh;
-  height: 100vh;
-margin-bottom: 100vh;
 }
 /* Header */
 
@@ -244,6 +242,7 @@ footer {
   padding: 20px;
   color: white;
   background: #36474f;
+  margin-top: auto;
 }
 
 .additional {
