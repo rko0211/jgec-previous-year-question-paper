@@ -1,4 +1,5 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -9,7 +10,7 @@
 
 body {
 
-    font-family: "Lato", sans-serif;
+   min-height: 100vh;
     background-color: powderblue
 }
 
@@ -51,6 +52,7 @@ body {
     background-color: #555;
     color: white;
 }
+
 
 .box {
 
@@ -167,10 +169,12 @@ a {
 footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     padding: 20px;
     color: white;
     background: #36474f;
+    min-width: 100vw;
+    margin: auto;
 }
 
 .additional {
@@ -351,7 +355,9 @@ footer .f-ele1 span {
 #lab_social_icon_footer #social-em:hover {
     color: #f39c12;
 }
-
+.icn{
+    margin: 10px;
+}
 /* End footer */
 /* Footer media queries */
 
@@ -380,6 +386,7 @@ footer .f-ele1 span {
 @media (max-width:1095px) {
     footer {
         flex-direction: column;
+        align-items: center;
     }
 
     .f-ele3 {
@@ -455,3 +462,17 @@ footer .f-ele1 span {
 
 
 /* Ende footer */
+@media(max-width:322px){
+    .card{
+        width: 100%;
+        margin: auto;
+        
+    }
+    .card img{
+        width: 100%;
+    }
+    .container{
+        flex-direction: column;
+    }
+   
+}
