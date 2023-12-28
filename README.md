@@ -16,10 +16,10 @@ Website is live at : https://rko0211.github.io/jgec-previous-year-question-paper
 - Add Screenshots and updated website links to help us understand what changes is all about.
 
 ## What Changes Can You Make Here ?
-- First See the navber options of this website.
-- Create a beautiful and responsive About Page using HTML, CSS, and Javascript with some poem text. Linked the page with **About**       options(You can find it from **index.html** file of this repository).
-- Create a beautiful and responsive **Purpose Page** using HTML, CSS, and JavaScript, including some poem text. Link the page to the Purpose options (which you can find in the **index.html** file of this repository)..
-- Create a beautiful, responsive, and functional **Contact Page** using my email address as the destination. Link the page with the   **Contact** options (which you can find in the **index.html** file of this repository).
+- First See the navber options of this website. <br>
+- Create a beautiful and responsive About Page using HTML, CSS, and Javascript with some poem text. Linked the page with **About** options(You can find it from **index.html** file of this repository).  <br>
+- Create a beautiful and responsive **Purpose Page** using HTML, CSS, and JavaScript, including some poem text. Link the page to the Purpose options (which you can find in the **index.html** file of this repository).  <br>
+- Create a beautiful, responsive, and functional **Contact Page** using my email address as the destination. Link the page with the **Contact** options (which you can find in the **index.html** file of this repository). <br>
 - Some pages do not contain a Footer Section. Please add the footer to those pages using the content present in the other footers.
 
 ## I'll make sure to merge it❤
