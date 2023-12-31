@@ -8,7 +8,7 @@ Website is live at : https://rko0211.github.io/jgec-previous-year-question-paper
 
 ## How To Contribute
 
-- Firstly add a star(✨) in this Repository.
+- Firstly add a star(⭐) in this Repository.
 - Fork the Repository and create a new branch for any updates/changes/issue you are working on.
 - Start Coding and do changes.
 - Commit your changes
