@@ -12,6 +12,7 @@ Website is live at : https://rko0211.github.io/jgec-previous-year-question-paper
 - Fork the Repository and create a new branch for any updates/changes/issue you are working on.
 - Start Coding and do changes.
 - Commit your changes
+- Everyone is requested to open their PR in Test bracnh of this repository.
 - Create a Pull Request which will be reviewed and suggestions would be added to improve it.
 - Add Screenshots and updated website links to help us understand what changes is all about.
 
