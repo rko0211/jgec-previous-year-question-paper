@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
  
+.dark{
+  background-color: black;
+  color:whitesmoke;
+}
+.light{
+  background-color: white;
+  color: black;
+}
 * {
   padding: 0;
   margin: 0;
@@ -17,7 +25,7 @@ header {
   /* position: absolute; */
   width: 100%;
   min-height: 66px;
-  background: white;
+  /*background: white;*/
   padding: 0 100px;
   display: flex;
   justify-content: space-between;
@@ -37,7 +45,7 @@ header .gd {
   text-decoration: none;
   font-size: 2em;
   font-weight: 600;
-  color: black;
+  /*color: black;*/
 }
 
 header .logo img {
@@ -62,7 +70,7 @@ header ul li a {
   text-decoration: none;
   display: flex;
   justify-content: space-between;
-  color: black;
+  color: blue;
 }
 
 header nav ul .unique a {
@@ -104,7 +112,7 @@ header ul li a:hover {
   max-width: 400px;
   text-align: center;
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: greenyellow;
   flex-wrap: wrap;
   box-shadow: -1px 0 10px hsl(0, 0%, 0%);
   margin: 23px 23px;
@@ -169,7 +177,7 @@ header ul li a:hover {
 .blink {
   padding-top: 20px;
   animation: blinker 1.5s linear infinite;
-  color: rgb(0, 0, 0);
+  color: red;
   font-size: 20px;
 }
 
@@ -383,7 +391,7 @@ footer .f-ele1 span {
   color: white;
 }
 
-#lab_social_icon_footer .social:hover {
+/*#lab_social_icon_footer .social:hover {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
   -o-transform: scale(1.1);
@@ -393,12 +401,12 @@ footer .f-ele1 span {
   -webkit-transform: scale(0.8);
   /* Browser Variations: */
 
-  -moz-transform: scale(0.8);
+ /* -moz-transform: scale(0.8);
   -o-transform: scale(0.8);
   -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
-}
+}/*
 
 /*
     Multicoloured Hover Variations
@@ -574,7 +582,7 @@ footer .f-ele1 span {
       position: absolute;
       width: 100%;
       height: 3px;
-      background: black;
+      background:black;
       transform: translateY(-12px);
       box-shadow: 0 12px black;
   }
