@@ -17,7 +17,6 @@ body {
  color: var(--color-fg);
  display: grid;
  min-height: 100vh;
- place-items: center;
 }
 
 button {
@@ -428,7 +427,7 @@ footer .f-ele1 span {
   color: white;
 }
 
-/*#lab_social_icon_footer .social:hover {
+#lab_social_icon_footer .social:hover {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
   -o-transform: scale(1.1);
@@ -438,7 +437,7 @@ footer .f-ele1 span {
   -webkit-transform: scale(0.8);
   /* Browser Variations: */
 
- /* -moz-transform: scale(0.8);
+  -moz-transform: scale(0.8);
   -o-transform: scale(0.8);
   -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
