@@ -165,23 +165,34 @@ header ul li a:hover{
   font-weight: 550;
 }
 
+.common{
+  transition: all 0.3s ease;
+}
+
 .common:hover {
-  background-color: rgb(62, 62, 62);
+  background-color: rgb(85, 85, 85);
   color: white;
   transform: scale(1.03);
-  transition: all 0.4s ease;
+}
+
+.btn{
+  padding-left: 15px;
+  padding-right: 15px;
+  transition: all 0.2s ease;
 }
 
 .btn:hover {
-  background-color: blue;
+  background-color: rgb(255,102,0);
   transform: scale(1.03);
+}
+
+.yrpage{
   transition: all 0.2s ease;
 }
 
 .yrpage:hover {
   color: black;
-  color: #000000;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .blink {
