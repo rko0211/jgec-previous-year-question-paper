@@ -20,23 +20,67 @@ body {
 }
 
 button {
-  color: #fff;
-  padding: 15px 25px;
-  background-color: #38D2D2;
-  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
-  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
-  border-radius: 14px;
-  font-weight: bold;
-  font-size: 16px;
-
-  border: 0;
-
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-
-  cursor: pointer;
+	margin: auto;
+	border-radius: 20px;
+	background-color: #667292;
+	box-shadow: 10px 15px 40px #36486b;
+	width: 300px;
+	height: 100px;
+	font-size: 50px;
+	font-family: cambria;
+	color: #bccad6;
+	border: none;
 }
+
+button:hover {
+	border: none;
+	background-color: #8d9db6;
+	opacity: 1;
+	color: #36486b;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	position: absolute;
+}
+
+.btn:hover {
+	transition: 0.5s ease-in-out;
+	background: #8d9db6;
+}
+
+button {
+	--color1: #36486b;
+	--color2: #bccad6;
+	font-family: cambria;
+	text-align: center;
+	font-size: 46px;
+	background: repeating-linear-gradient(
+		45deg,
+		var(--color1),
+		var(--color1) 30px,
+		var(--color2) 30px,
+		var(--color2) 60px
+	);
+	background-clip: text;
+	color: transparent;
+	-webkit-background-clip: text;
+	animation: 40s linear 0s infinite move;
+}
+
+@keyframes move {
+	from {
+		background-position: 0px;
+	}
+
+	to {
+		background-position: 1000px;
+	}
+}
+
 /*.dark{
   background-color: black;
   color:whitesmoke;
@@ -148,7 +192,7 @@ header ul li a:hover {
   max-width: 400px;
   text-align: center;
   border-radius: 5px;
-  background-color: green;
+  background-color: #c3e2c2;
   flex-wrap: wrap;
   box-shadow: -1px 0 10px hsl(0, 0%, 0%);
   margin: 23px 23px;
@@ -206,7 +250,7 @@ header ul li a:hover {
 
 .yrpage:hover {
   color: black;
-  color: #000000;
+  color: black;
   font-weight: bold;
 }
 
@@ -618,9 +662,9 @@ footer .f-ele1 span {
       position: absolute;
       width: 100%;
       height: 3px;
-      background:black;
+      background:orangered;
       transform: translateY(-12px);
-      box-shadow: 0 12px black;
+      box-shadow: 0 12px orangered;
   }
 
   .menu::after {
@@ -628,13 +672,13 @@ footer .f-ele1 span {
       position: absolute;
       width: 100%;
       height: 3px;
-      background: black;
+      background: orangered;
       transform: translateY(12px);
   }
 
   header.active .menu::before {
       transform: rotate(45deg);
-      box-shadow: 0 0 #0000;
+      box-shadow: 0 0 orangered;
   }
 
   header.active .menu::after {
