@@ -113,12 +113,17 @@ header {
   /* position: absolute; */
   width: 100%;
   min-height: 66px;
+<<<<<<< HEAD
   /*background: white;*/
+=======
+  /* background: white; */
+>>>>>>> 0b1c7cab6efff98992bebddbe2ba7c90d5e6ca4c
   padding: 0 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px #888888;
+  box-shadow: 0 2px #242121;
+  background-color: #2196f3;
 }
 
 header .lgosection {
@@ -152,24 +157,45 @@ header ul li {
 }
 
 header ul li a {
-
-  font-size: 1.1em;
+  font-size: 1.1rem;
   padding: 20px 25px;
   text-decoration: none;
   display: flex;
   justify-content: space-between;
+<<<<<<< HEAD
   color: blue;
+=======
+  display: inline-block;
+  position: relative;
+  color: whitesmoke;
+  
+>>>>>>> 0b1c7cab6efff98992bebddbe2ba7c90d5e6ca4c
 }
 
 header nav ul .unique a {
-  background: #2b93e3;
+  background: black;
   color: whitesmoke;
   z-index: index 2;
 }
-
-header ul li a:hover {
-  background: #2b93e3;
-  color: whitesmoke;
+header ul li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-in-out;
+  border : 1px solid red;
+}
+header ul li a:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+header ul li a:hover{
+  background-color: black;
 }
 /* End header */
 
@@ -644,15 +670,16 @@ footer .f-ele1 span {
       text-align: center;
       width: 100%;
       color: white;
+      background-color: #2b93e3;
   }
 
   header nav ul li a:hover {
-      background: #2b93e3;
+      background: black;
       color: whitesmoke;
   }
 
   header nav ul .unique a {
-      background: #2b93e3;
+      background: black;
       color: whitesmoke;
   }
 
