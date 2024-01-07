@@ -1,0 +1,305 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+header{
+    width: 100%;
+    min-height: 66px;
+    padding: 0 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px #242121;
+    background-color: #2196f3;
+}
+ header .logosection{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+header .gd {
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: 600;
+    color: black;
+  }
+header .logo img {
+    text-decoration: none;
+    height: 30px;
+    padding-bottom: 2px;
+    margin-bottom: 20px;
+}
+
+h3{
+    color: rgb(108, 114, 118);
+    margin-top: 21px;
+    padding: 0px 318px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+h4{
+    padding: 1px 400px;
+    color: rgb(108, 114, 118);
+}
+
+.img_clg{
+    width: 880px;
+    height: 460px;
+    padding: 0px 27px;
+    margin: 0px 1rem;
+    margin-top: 22px ;
+}
+.cont_bar{
+  display: flex;
+  padding:10px 20px;
+  margin: 10px 20px;
+}
+h5{
+    color: rgb(154, 47, 47);
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: underline;
+
+}
+p{
+    color: rgb(55, 53, 53);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-bottom: 0px;
+}
+.cont_head{
+  margin-top: 20px;
+  background-color: #f5f5f7;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  /* height: 275px; */
+}
+
+.links {
+  list-style: none;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+  font-size: 20px;
+}
+.links a{
+  color:#523939;
+}
+#link{
+  color: #242121;
+}
+
+#content_id{
+  margin-top: 10px;
+  padding:  0px 10px;
+  color: rgb(55, 53, 53);
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+#cont_1{
+  color: black;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+a{
+  text-decoration: none;
+  color: #295ed1;
+  margin-left:10px ;
+
+
+}
+a:hover{
+  text-decoration: underline;
+}
+.sec_heading{
+  color: black;
+  margin: 60px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.Mission{
+    margin: 60px;
+    margin-top: 94px;
+}
+.img_mission{
+    float:right;
+    width: 237px;
+    height: 151px;
+}
+.values{
+    margin: 60px;
+    /* margin-top: 160px; */
+}
+.img_values{
+    float: right;
+}
+.Objectives{
+    margin: 60px;
+    margin-top: 107px;
+}
+.img_objective{
+    width: 237px;
+    height: 212px;
+    float: right;
+    margin-left: 30px;
+}
+.Benefits{
+    margin:60px;
+    margin-top:100px ;
+}
+.img_benefits{
+    float: right;
+}
+.Conclusion{
+    margin:60px;
+}
+.Faq{
+    border: 2px solid #565151;
+    margin: 10px 20px;
+    background-color: #f5f5f7;
+    padding: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.copyright{
+    color:white;
+    background: #6e767a;
+    padding: 0px 5px;
+
+
+}
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    background: #6e767a;
+    margin-top: auto;
+  }
+  .f-ele3 a li {
+    list-style-type: none;
+  }
+  .f-ele3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .f-ele3 ul {
+  
+    font-weight: bold;
+   
+  }
+  
+  .f-ele3 ul span {
+    font-size: 22px;
+    font-weight: 600;
+  
+  }
+  
+  .f-ele3 ul a li .eimg {
+    width: 15px;
+    height: auto;
+  }
+  
+  .f-ele3 ul a {
+    text-decoration: none;
+    color: white;
+    margin: 1px;
+  }  
+  #lab_social_icon_footer {
+    padding: 40px 0;
+  
+  }
+  
+  #lab_social_icon_footer a {
+    color: white;
+  }
+  
+  #lab_social_icon_footer .social:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+  }
+  #lab_social_icon_footer .social {
+    -webkit-transform: scale(0.8);
+    /* Browser Variations: */
+  
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+  }
+  #lab_social_icon_footer #social-fb:hover {
+    color: #3B5998;
+  }
+  
+  #lab_social_icon_footer #social-tw:hover {
+    color: #4099FF;
+  }
+  
+  #lab_social_icon_footer #social-gp:hover {
+    color: #d34836;
+  }
+  
+  #lab_social_icon_footer #social-em:hover {
+    color: #f39c12;
+  }
+.gd{
+  font-size: 40px;
+}
+
+  @media screen and (max-device-width: 600px) {
+    .logo{
+      margin: 0px;
+    }
+   h4{
+    padding: 0px;
+    text-align: center;
+   }
+   h3{
+    padding: 0px;
+    text-align: center;
+   }
+   .cont_bar{
+    flex-direction: column-reverse; 
+   }
+   .img_clg {
+    width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+.text-center {
+  font-size: 14px;
+}
+ul{
+  padding: 0px;
+}
+
+.f-ele3{
+  font-size: 15px;
+}
+header{
+  padding: 0 15px
+}
+.gd{
+  font-size: 30px !important;
+}
+header .logo img {
+  margin-bottom: 8px;
+}
+.cont_head {
+  padding: 15px 30px;
+}
+p{
+  margin-bottom: 0;
+}
+  }

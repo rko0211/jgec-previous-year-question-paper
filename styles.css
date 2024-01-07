@@ -92,6 +92,10 @@ header ul li a:hover::after{
 header ul li a:hover{
   background-color: black;
 }
+#toggleDark{
+  cursor: pointer;
+  position: absolute;
+}
 /* End header */
 
 .flexcontainer {
