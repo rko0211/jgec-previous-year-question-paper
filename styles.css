@@ -13,72 +13,80 @@
 }
 
 body {
- background-color: var(--color-bg);
- color: var(--color-fg);
- display: grid;
- min-height: 100vh;
+  font-family: Arial, sans-serif;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
 }
 
-button {
-	margin: auto;
-	border-radius: 20px;
-	background-color: #667292;
-	box-shadow: 10px 15px 40px #36486b;
-	width: 300px;
-	height: 100px;
-	font-size: 50px;
-	font-family: cambria;
-	color: #bccad6;
-	border: none;
+.container {
+  text-align: center;
 }
 
-button:hover {
-	border: none;
-	background-color: #8d9db6;
-	opacity: 1;
-	color: #36486b;
+h1 {
+  margin-bottom: 30px;
 }
 
-.center {
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: auto;
-	margin-bottom: auto;
-	position: absolute;
+/* Toggle styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
-.btn:hover {
-	transition: 0.5s ease-in-out;
-	background: #8d9db6;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-button {
-	--color1: #36486b;
-	--color2: #bccad6;
-	font-family: cambria;
-	text-align: center;
-	font-size: 46px;
-	background: repeating-linear-gradient(
-		45deg,
-		var(--color1),
-		var(--color1) 30px,
-		var(--color2) 30px,
-		var(--color2) 60px
-	);
-	background-clip: text;
-	color: transparent;
-	-webkit-background-clip: text;
-	animation: 40s linear 0s infinite move;
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
 }
 
-@keyframes move {
-	from {
-		background-position: 0px;
-	}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
 
-	to {
-		background-position: 1000px;
-	}
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark-mode .slider {
+  background-color: #999;
+}
+
+.dark-mode .slider:before {
+  background-color: #444;
 }
 
 /*.dark{
@@ -156,6 +164,7 @@ header ul li a {
 header nav ul .unique a {
   background: #2b93e3;
   color: whitesmoke;
+  z-index: index 2;
 }
 
 header ul li a:hover {
@@ -233,6 +242,7 @@ header ul li a:hover {
   padding-right: 2px;
   font-size: 1rem;
   font-weight: 550;
+  z-index:3
 }
 
 .common:hover {
