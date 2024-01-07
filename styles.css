@@ -38,14 +38,14 @@ h4 {
   width: 60px;
   height: 34px;
   margin-right: 2900px;
-  z-index: -1; 
+  z-index: 2;
 }
 
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
-  z-index: -2;
+  
 }
 
 .slider {
@@ -125,7 +125,7 @@ header {
   align-items: center;
   box-shadow: 0 2px #242121;
   background-color: #2196f3;
-  z-index: 21;
+  
 }
 
 header .lgosection {
@@ -173,7 +173,7 @@ header ul li a {
 header nav ul .unique a {
   background: black;
   color: whitesmoke;
-  z-index: 22;
+  z-index: 1;
 }
 header ul li a::after {
   content: '';
@@ -187,12 +187,12 @@ header ul li a::after {
   transform-origin: bottom right;
   transition: transform 0.25s ease-in-out;
   border : 1px solid red;
-  z-index: -1;
+  /*z-index: -1;*/
 }
 header ul li a:hover::after{
   transform: scaleX(1);
   transform-origin: bottom left;
-  z-index: 25;
+  /*z-index: 25;*/
 }
 header ul li a:hover{
   background-color: black;
