@@ -14,8 +14,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
   height: 100vh;
   margin: 0;
   background-color: #f4f4f4;
@@ -25,16 +25,19 @@ body {
   text-align: center;
 }
 
-h1 {
-  margin-bottom: 30px;
+h4 {
+  margin-bottom: 10px;
+  margin-right: 900px;
+  text-align:left ;
 }
 
 /* Toggle styles */
 .switch {
   position: relative;
-  display: inline-block;
+  display:inline-block;
   width: 60px;
   height: 34px;
+  margin-right: 2900px;
 }
 
 .switch input {
@@ -52,7 +55,7 @@ h1 {
   bottom: 0;
   background-color: #ccc;
   transition: 0.4s;
-  border-radius: 34px;
+  border-radius: 50px;
 }
 
 .slider:before {
@@ -113,11 +116,7 @@ header {
   /* position: absolute; */
   width: 100%;
   min-height: 66px;
-<<<<<<< HEAD
   /*background: white;*/
-=======
-  /* background: white; */
->>>>>>> 0b1c7cab6efff98992bebddbe2ba7c90d5e6ca4c
   padding: 0 100px;
   display: flex;
   justify-content: space-between;
@@ -128,7 +127,7 @@ header {
 
 header .lgosection {
   display: flex;
-  gap: 20px;
+  gap: 0px;
   justify-content: space-between;
   align-items: center;
 
@@ -162,14 +161,10 @@ header ul li a {
   text-decoration: none;
   display: flex;
   justify-content: space-between;
-<<<<<<< HEAD
-  color: blue;
-=======
   display: inline-block;
   position: relative;
   color: whitesmoke;
   
->>>>>>> 0b1c7cab6efff98992bebddbe2ba7c90d5e6ca4c
 }
 
 header nav ul .unique a {
