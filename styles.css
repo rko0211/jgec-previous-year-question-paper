@@ -38,14 +38,14 @@ h4 {
   width: 60px;
   height: 34px;
   margin-right: 2900px;
-  z-index: 100; 
+  z-index: -1; 
 }
 
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
-  z-index: 2;
+  z-index: -2;
 }
 
 .slider {
@@ -58,7 +58,6 @@ h4 {
   background-color: #ccc;
   transition: 0.4s;
   border-radius: 50px;
-  z-index: 3;
 }
 
 .slider:before {
@@ -188,7 +187,7 @@ header ul li a::after {
   transform-origin: bottom right;
   transition: transform 0.25s ease-in-out;
   border : 1px solid red;
-  z-index: 24;
+  z-index: -1;
 }
 header ul li a:hover::after{
   transform: scaleX(1);
