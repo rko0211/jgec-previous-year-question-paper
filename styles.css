@@ -295,6 +295,7 @@ header ul li a:hover{
   animation: blinker 1.5s linear infinite;
   color: red;
   font-size: 20px;
+  z-index: 0;
 }
 
 @keyframes blinker {
