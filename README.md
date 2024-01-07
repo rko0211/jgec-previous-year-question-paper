@@ -73,5 +73,10 @@ This project is licensed under the <a href="https://github.com/rko0211/jgec-prev
 
 If you have any suggestions,improvements feel free to raise an issue stating your idea . Your feedback is highly appreciated.
 
-Happy learning ! 📚✨
+### <div align="center">Happy learning ! 📚✨</div>
+
+<h6 align="center"> ©  rko0211 All Rights Reserved</h6>
+
+<h6 align="center">© jgec previous year question paper <br>
+All Rights Reserved</h6>
 
