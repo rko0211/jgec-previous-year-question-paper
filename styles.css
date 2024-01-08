@@ -1,6 +1,112 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
- 
+[data-theme="light"] {
+  --color-bg: #ffffff;
+  --color-fg: #000000;
+}
+
+[data-theme="dark"] {
+  --color-bg: #000000;
+  --color-fg: #ffffff;
+}
+html{
+  overflow-x: hidden;
+}
+body {
+  font-family: Arial, sans-serif;
+  justify-content: left;
+  align-items: left;
+  height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
+  overflow-x: hidden;
+    width: 100%;
+    
+}
+
+.container {
+  text-align: center;
+}
+
+h4 {
+  margin-bottom: 10px;
+  margin-right: 900px;
+  text-align:left ;
+}
+
+/* Toggle styles */
+.switch {
+  position: relative;
+  display:inline-block;
+  width: 60px;
+  height: 34px;
+  margin-right: 2900px;
+  z-index: 2;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark-mode .slider {
+  background-color: #999;
+}
+
+.dark-mode .slider:before {
+  background-color: #444;
+}
+
+/*.dark{
+  background-color: black;
+  color:whitesmoke;
+}
+.light{
+  background-color: white;
+  color: black;
+}*/
 * {
   padding: 0;
   margin: 0;
@@ -17,18 +123,19 @@ header {
   /* position: absolute; */
   width: 100%;
   min-height: 66px;
-  /* background: white; */
+  /*background: white;*/
   padding: 0 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px #242121;
   background-color: #2196f3;
+  
 }
 
 header .lgosection {
   display: flex;
-  gap: 20px;
+  gap: 0px;
   justify-content: space-between;
   align-items: center;
 
@@ -38,7 +145,7 @@ header .gd {
   text-decoration: none;
   font-size: 2em;
   font-weight: 600;
-  color: black;
+  /*color: black;*/
 }
 
 header .logo img {
@@ -71,6 +178,7 @@ header ul li a {
 header nav ul .unique a {
   background: black;
   color: whitesmoke;
+  z-index: 1;
 }
 header ul li a::after {
   content: '';
@@ -84,13 +192,19 @@ header ul li a::after {
   transform-origin: bottom right;
   transition: transform 0.25s ease-in-out;
   border : 1px solid red;
+  /*z-index: -1;*/
 }
 header ul li a:hover::after{
   transform: scaleX(1);
   transform-origin: bottom left;
+  /*z-index: 25;*/
 }
 header ul li a:hover{
   background-color: black;
+}
+#toggleDark{
+  cursor: pointer;
+  position: absolute;
 }
 /* End header */
 
@@ -122,7 +236,7 @@ header ul li a:hover{
   max-width: 400px;
   text-align: center;
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: #c3e2c2;
   flex-wrap: wrap;
   box-shadow: -1px 0 10px hsl(0, 0%, 0%);
   margin: 23px 23px;
@@ -163,6 +277,7 @@ header ul li a:hover{
   padding-right: 2px;
   font-size: 1rem;
   font-weight: 550;
+  z-index:3
 }
 
 .common:hover {
@@ -180,15 +295,16 @@ header ul li a:hover{
 
 .yrpage:hover {
   color: black;
-  color: #000000;
+  color: black;
   font-weight: bold;
 }
 
 .blink {
   padding-top: 20px;
   animation: blinker 1.5s linear infinite;
-  color: rgb(0, 0, 0);
+  color: red;
   font-size: 20px;
+  z-index: 0;
 }
 
 @keyframes blinker {
@@ -202,7 +318,7 @@ header ul li a:hover{
 
   padding-top: 20px;
   animation: blinker 1.5s linear infinite;
-  color: rgb(0, 0, 0);
+  color: #ff9800;
   font-size: 20px;
 
 }
@@ -416,7 +532,7 @@ footer .f-ele1 span {
   -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
-}
+}/*
 
 /*
     Multicoloured Hover Variations
@@ -593,9 +709,9 @@ footer .f-ele1 span {
       position: absolute;
       width: 100%;
       height: 3px;
-      background: black;
+      background:orangered;
       transform: translateY(-12px);
-      box-shadow: 0 12px black;
+      box-shadow: 0 12px orangered;
   }
 
   .menu::after {
@@ -603,13 +719,13 @@ footer .f-ele1 span {
       position: absolute;
       width: 100%;
       height: 3px;
-      background: black;
+      background: orangered;
       transform: translateY(12px);
   }
 
   header.active .menu::before {
       transform: rotate(45deg);
-      box-shadow: 0 0 #0000;
+      box-shadow: 0 0 orangered;
   }
 
   header.active .menu::after {
