@@ -603,3 +603,80 @@ footer .f-ele1 span {
       display: none;
   }
 }
+
+/* adding CSS to the contact section */
+.contact-section{
+    width:100%;
+    background-color:bisque;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.contact-map{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.contact-us form{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+}
+#name{
+  height:50px;
+  width:500px;
+  border-radius: 10px;
+  padding:5px 5px;
+  padding-left: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.500);
+  font-family: Arial;
+  color:crimson;
+  margin-top: 5px;
+  margin-bottom:5px;
+}
+#phone{
+  height:50px;
+  width:500px;
+  border-radius: 10px;
+  padding:5px 5px;
+  border: 2px solid rgba(0, 0, 0, 0.500);
+  font-family: Arial;
+  color:crimson;
+  margin-top: 5px;
+  margin-bottom:5px;
+}
+#email{
+  height:50px;
+  width:500px;
+  border-radius: 10px;
+  padding:5px 5px;
+  border: 2px solid rgba(0, 0, 0, 0.500);
+  font-family: Arial;
+  color:crimson;
+  margin-top: 5px;
+  margin-bottom:5px;
+}
+#submit{
+  height:50px;
+  width:200px;
+  border-radius: 5px;
+  padding:5px 5px;
+  border: 2px solid rgba(0, 0, 0, 0.500);
+  font-family: Arial;
+  background-color: rgba(220, 20, 60, 0.700);
+  color:white;
+  margin-left: 150px;
+  margin-top: 5px;
+  margin-bottom:5px;
+}
+#doubt{
+  height:200px;
+  width:500px;
+  border-radius: 10px;
+  padding:5px 5px;
+  border: 2px solid rgba(0, 0, 0, 0.500);
+  font-family: Arial;
+  color:crimson;
+  margin-top: 5px;
+  margin-bottom:5px;
+}
