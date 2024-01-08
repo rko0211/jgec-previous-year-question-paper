@@ -11,7 +11,9 @@
   --color-bg: #000000;
   --color-fg: #ffffff;
 }
-
+html{
+  overflow-x: hidden;
+}
 body {
   font-family: Arial, sans-serif;
   justify-content: left;
@@ -19,7 +21,9 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #f4f4f4;
-  overflow-x:hidden;
+  overflow-x: hidden;
+    width: 100%;
+    
 }
 
 .container {
