@@ -439,7 +439,6 @@ footer .f-ele1 span {
       width: 2em;
   }
 
-
 }
 
 @media (max-width:1095px) {
@@ -453,6 +452,7 @@ footer .f-ele1 span {
       text-align: center;
   }
 }
+
 /* End footer media queries */
 
 
@@ -679,4 +679,33 @@ footer .f-ele1 span {
   color:crimson;
   margin-top: 5px;
   margin-bottom:5px;
+}
+@media (max-width:500px) {
+  .contact-section{
+    display:flex;
+    flex-direction: column;
+    background-color: white;
+  }
+  .contact-map iframe{
+    width:400px;
+  }
+  #name{
+    width:400px;
+  }
+
+  #phone{
+    width:400px;
+  }
+
+  #email{
+    width:400px;
+  }
+
+  #phone{
+    width:400px;
+  }
+
+  #doubt{
+    width:400px;
+  }
 }
