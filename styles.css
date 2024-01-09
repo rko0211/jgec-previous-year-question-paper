@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
-
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 [data-theme="light"] {
   --color-bg: #ffffff;
@@ -123,19 +121,18 @@ header {
   /* position: absolute; */
   width: 100%;
   min-height: 66px;
-  /*background: white;*/
+  /* background: white; */
   padding: 0 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px #242121;
   background-color: #2196f3;
-  color:#000000
 }
 
 header .lgosection {
   display: flex;
-  gap: 0px;
+  gap: 20px;
   justify-content: space-between;
   align-items: center;
 
@@ -145,7 +142,7 @@ header .gd {
   text-decoration: none;
   font-size: 2em;
   font-weight: 600;
-  /*color: black;*/
+  color: black;
 }
 
 header .logo img {
@@ -192,12 +189,10 @@ header ul li a::after {
   transform-origin: bottom right;
   transition: transform 0.25s ease-in-out;
   border : 1px solid red;
-  /*z-index: -1;*/
 }
 header ul li a:hover::after{
   transform: scaleX(1);
   transform-origin: bottom left;
-  /*z-index: 25;*/
 }
 header ul li a:hover{
   background-color: black;
@@ -232,7 +227,7 @@ header ul li a:hover{
   max-width: 400px;
   text-align: center;
   border-radius: 5px;
-  background-color: #c3e2c2;
+  background-color: lightgreen;
   flex-wrap: wrap;
   box-shadow: -1px 0 10px hsl(0, 0%, 0%);
   margin: 23px 23px;
@@ -291,7 +286,7 @@ header ul li a:hover{
 
 .yrpage:hover {
   color: black;
-  color: black;
+  color: #000000;
   font-weight: bold;
 }
 
@@ -528,7 +523,7 @@ footer .f-ele1 span {
   -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
-}/*
+}
 
 /*
     Multicoloured Hover Variations
