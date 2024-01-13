@@ -167,6 +167,7 @@ a{
     flex-direction: column;
     flex-wrap: wrap;
     max-width: 550px;
+    margin-top: 30px;
 }
 .additional > p{
 margin-top: 10px;
@@ -223,6 +224,7 @@ footer .f-ele1 span {
     align-items: center;
 
     text-align: center;
+    margin-top: 37px;
 }
 
 .f-ele2 ul {
