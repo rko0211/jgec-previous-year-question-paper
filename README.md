@@ -2,6 +2,26 @@
 
 # <div align="center">JGEC PREVIOUS YEAR QUESTION PAPERS</div>
 
+<div align="center">
+ <p>
+
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)
+![Visitors](https://api.visitorbadge.io/api/visitors?path=rko0211%2Fjgec-previous-year-question-paper%20&countColor=%23263759&style=flat)
+![GitHub forks](https://img.shields.io/github/forks/rko0211/jgec-previous-year-question-paper)
+![GitHub Repo stars](https://img.shields.io/github/stars/rko0211/jgec-previous-year-question-paper)
+![GitHub contributors](https://img.shields.io/github/contributors/rko0211/jgec-previous-year-question-paper)
+![GitHub last commit](https://img.shields.io/github/last-commit/rko0211/jgec-previous-year-question-paper)
+![GitHub repo size](https://img.shields.io/github/repo-size/rko0211/jgec-previous-year-question-paper)
+![Github](https://img.shields.io/github/license/rko0211/jgec-previous-year-question-paper)
+![GitHub issues](https://img.shields.io/github/issues/rko0211/jgec-previous-year-question-paper)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/rko0211/jgec-previous-year-question-paper)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/rko0211/jgec-previous-year-question-paper)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/rko0211/jgec-previous-year-question-paper)
+
+ </p>
+ </div>
+
 Welcome to our Repository, your one-stop destination for accessing previous year question papers of various courses offered at Jalpaiguri Government Engineering College. This repository is designed to assist students in their exam preparations, providing valuable resources to enhance their understanding of the curriculum and exam patterns.
 
 Check it out at : https://rko0211.github.io/jgec-previous-year-question-paper/
