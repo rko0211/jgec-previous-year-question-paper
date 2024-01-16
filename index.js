@@ -28,18 +28,20 @@ fetch(scriptURL, { method: 'POST', body: new FormData(form)})
 });
 
 //scroll to top
-$(document).ready(function() {
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-      $('#top-button').fadeIn();
-    } else {
-      $('#top-button').fadeOut();
-    }
-  });
-  $('#top-button').click(function() {
-    $("html, body").animate({
-      scrollTop: 0
-    }, 600);
-    return false;
-  });
-});
+let mybutton = document.getElementById("myBtn");
+
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop >10 || document.documentElement.scrollTop > 10) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
