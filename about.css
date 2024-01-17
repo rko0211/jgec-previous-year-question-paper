@@ -8,9 +8,6 @@ body{
     height: 100%;
 }
      
-html{
-  /* overflow-x: hidden; */
-}
 
 header {
   /* position: absolute; */
@@ -702,4 +699,9 @@ footer .f-ele1 span {
       width: 79%;
     }
     
+  }
+  @media(max-width:1020px) {
+    .text h1{
+      margin-top: 80px;
+    }
   }
