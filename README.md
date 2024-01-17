@@ -178,6 +178,6 @@ If you have any suggestions,improvements feel free to raise an issue stating you
 <summary><h2><img src="https://media.giphy.com/media/JRPftUYuIRw3axuh5y/giphy-downsized-large.gif" align="center"
                 width="1000" />
 
-<center><h6 align="center"> ©  rko0211 All Rights Reserved</h6>
-<h6 align="center">© jgec previous year question paper <br>
-All Rights Reserved</h6></center> <br>
+<h6 text-align="center"> ©  rko0211 All Rights Reserved</h6><br>
+<center><h6 text-align="center"> © jgec previous year question paper All Rights Reserved</h6></center><br>
+
