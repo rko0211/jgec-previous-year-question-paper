@@ -8,6 +8,9 @@ body{
     height: 100%;
 }
      
+html{
+  /* overflow-x: hidden; */
+}
 
 header {
   /* position: absolute; */
@@ -90,7 +93,7 @@ header ul li a:hover{
 }
 
 .image-1 img{
-  width: 86%;
+  width: 90%;
   height: 450px;
   margin-top: 40px;
   border: 1px solid white;
@@ -111,6 +114,12 @@ header ul li a:hover{
   color: rgb(33, 29, 29);
   font-weight: 500;
 }
+.text h1{
+  color: #1168cc;
+  margin-bottom: 60px;
+  /* text-align: center; */
+}
+
 
 .topic-1{
   display: flex;
@@ -129,8 +138,10 @@ header ul li a:hover{
   width: 88%;
   height: 180px;
 }
+.text-1 h2{
+  text-align: center;
+}
 h2{
-  text-align:center ;
   color: rgb(60, 115, 218);
   text-decoration: underline;
   margin-bottom: 25px;
@@ -147,6 +158,9 @@ h2{
    font-size: 1.1rem;
    line-height: 30px;
    color: #302b2b;
+}
+.text-2 h2{
+  text-align: center;
 }
 .image-3 img{
   width: 88%;
@@ -165,6 +179,9 @@ h2{
    line-height: 30px;
    color: #302b2b;
 }
+.text-3 h2{
+  text-align: center;
+}
 .image-4 img{
   width: 88%;
   height: 180px;
@@ -181,6 +198,9 @@ h2{
    font-size: 1.1rem;
    line-height: 30px;
    color: #302b2b;
+}
+.text-4 h2{
+  text-align: center;
 }
 .image-5 img{
   width: 88%;
@@ -201,12 +221,11 @@ h2{
 footer {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   padding: 20px;
   color: white;
   background: #36474f;
-  min-width: 100vw;
-  margin: auto;
+  margin-top: auto;
 }
 
 .additional {
@@ -214,19 +233,13 @@ footer {
   flex-direction: column;
   flex-wrap: wrap;
   max-width: 550px;
-  margin-top: 30px;
-  
-}
-.additional > p{
-margin-top: 10px;
 }
 
 footer .f-ele1 {
 
   margin: 1.5rem 0;
   padding: 0.5rem;
-  background: #fff;
- 
+  background: #fff;;
   border-radius: 8px;
   width: fit-content;
   display: flex;
@@ -240,8 +253,8 @@ footer .f-ele1 {
   margin: auto 0.5rem;
   font-size: 1.3em;
   font-weight: 500;
-  color: #3c434e;
-
+ 
+  color: #3c434e;;
   text-align: left;
 }
 
@@ -255,7 +268,7 @@ footer .f-ele1 span {
   padding: 0.2rem 0.6rem;
   font-size: 1.4rem;
   font-weight: 500;
-
+ 
   color: #1d1c1c;
   background: #ffb808;
   text-align: center;
@@ -272,7 +285,6 @@ footer .f-ele1 span {
   align-items: center;
 
   text-align: center;
-  margin-top: 37px;
 }
 
 .f-ele2 ul {
@@ -318,7 +330,7 @@ footer .f-ele1 span {
 .f-ele3 ul {
 
   font-weight: bold;
-
+ 
 }
 
 .f-ele3 ul span {
@@ -390,9 +402,6 @@ footer .f-ele1 span {
 #lab_social_icon_footer #social-em:hover {
   color: #f39c12;
 }
-.icn{
-  margin: 10px;
-}
 /* End footer */
 /* Footer media queries */
 
@@ -401,11 +410,9 @@ footer .f-ele1 span {
   footer .f-ele1 span {
       font-size: 0.8em;
   }
-
-  footer .f-ele1 p {
+  footer .f-ele1 p{
       font-size: 0.9em;
   }
-
   .btny {
       margin: 0.1em;
 
@@ -421,7 +428,6 @@ footer .f-ele1 span {
 @media (max-width:1095px) {
   footer {
       flex-direction: column;
-      align-items: center;
   }
 
   .f-ele3 {
@@ -430,8 +436,7 @@ footer .f-ele1 span {
       text-align: center;
   }
 }
-
-
+/* End footer media queries */
 
 
 
@@ -440,11 +445,9 @@ footer .f-ele1 span {
   footer .f-ele1 span {
       font-size: 0.8em;
   }
-
-  footer .f-ele1 p {
+  footer .f-ele1 p{
       font-size: 0.9em;
   }
-
   .btny {
       margin: 0.1em;
 
@@ -456,7 +459,6 @@ footer .f-ele1 span {
 
 
 }
-
 @media(max-width:298px){
   .glink{
     font-size: 20px;
@@ -589,20 +591,25 @@ footer .f-ele1 span {
        width: 80%;
        font-size: 1.1rem;
        line-height: 20px;
+       text-align: center;
+    }
+    .text-1 h2{
+      text-align: center;
     }
     .image-2 img{
       width: 70%;
       height: 170px;
     }
-    h2{
+    /* h2{
       text-align:center ;
       margin-bottom: 25px;
-    }
+    } */
     .topic-2{
-      flex-direction: column;
+      flex-direction:column-reverse;
     }
     .text-2{
       margin-left: 10px;
+      text-align: center;
        width: 80%;
        font-size: 1.1rem;
        line-height: 20px;
@@ -627,7 +634,7 @@ footer .f-ele1 span {
       height: 170px;
     }
     .topic-4{
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
     .text-4{
       margin-left: 10px;
@@ -657,8 +664,42 @@ footer .f-ele1 span {
     }
     .image-1 img{
       margin-left: 50px;
+      width: 75%;
+      height: 255px;
+    }
+    
+  }
+  @media(max-width:540px) {
+    .text-1{
+      text-align: center;
+      width: 67%;
+    }
+    .text-2{
+      text-align: center;
+      width: 78%;
+    }
+    .text-3{
+      width: 59%;
+    }
+    .text-4{
+      width: 59%;
+    }
+    
+  }
+  @media(max-width:430px) {
+    .text-1{
+      text-align: center;
       width: 90%;
-      height: 350px;
+    }
+    .text-2{
+      text-align: center;
+      width: 97%;
+    }
+    .text-3{
+      width: 89%;
+    }
+    .text-4{
+      width: 79%;
     }
     
   }
