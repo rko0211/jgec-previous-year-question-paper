@@ -58,20 +58,77 @@ Feel free to explore, download, and utilize these question papers as part of you
 
 - Departments : CSE , ECE , IT , EE , ME , CE 
 
-## Contributing
+## How to Contribute
 
-We encourage contributions to enhance the repository. If you have additional question papers, corrections, or improvements, please follow these steps:
+We welcome contributions from the community! If you'd like to contribute to this project, follow these steps:
 
-1) Star(⭐) and Fork this repository
-2) Make a clone of it on your local machine
-3) Create a new branch for your contribution(any updates/changes/issue you are working on)
-4) Make the required changes
-5) Commit the changes
-6) Submit a pull request which will be reviewed and suggestions would be added to improve it.
-Make sure to open the PR in Test branch of this repository. 
-7) Add Screenshots and updated website links to help us understand what changes have been made.
+1. *Fork the Repository:*
+   - Click on the "Fork" button at the top right corner of the repository page.
 
-Your contributions are invaluable in making this repository a comprehensive and reliable resource for all students.
+2. *Clone Your Fork:*
+   - Clone the repository from your GitHub account to your local machine.
+     bash
+     git clone https://github.com/your-username/jgec-previous-year-question-paper.git 
+  
+
+3. *Create a Branch:*
+   - Create a new branch for your contribution.
+     bash
+     git checkout -b feature-branch
+     
+
+4. *Make Changes:*
+   - Make your desired changes to the codebase.
+
+5. *Commit Changes:*
+   - Commit your changes with a descriptive commit message.
+     bash
+     git commit -m "Add feature or fix"
+     
+
+6. *Push Changes:*
+   - Push your changes to your fork on GitHub.
+     bash
+     git push origin feature-branch
+     
+
+7. *Create a Pull Request:*
+   - Open a Pull Request (PR) on the original repository.
+   - Provide a clear title and description for your PR.
+
+8. *Review and Merge:*
+   - The maintainers will review your PR and may request changes.
+   - Once approved, your changes will be merged into the main branch.
+
+## Syncing with Upstream
+
+If the original repository has been updated, sync your fork to include the latest changes:
+
+1. *Add Upstream Remote:*
+   - Add the upstream repository as a remote.
+     bash
+     git remote add upstream https://github.com/original-username/jgec-previous-year-question-paper.git 
+     
+
+2. *Fetch Upstream Changes:*
+   - Fetch the changes from the upstream repository.
+     bash
+     git fetch upstream
+     
+
+3. *Merge Upstream Changes:*
+   - Merge the changes from the upstream repository into your local branch.
+     bash
+     git merge upstream/main
+     
+
+4. *Push Changes to Your Fork:*
+   - Push the updated changes to your fork on GitHub.
+     bash
+     git push origin main
+     
+
+We appreciate your contributions! Let's make Memory Collector even better together.
 
 ## What Changes Can You Make Here ?
 
@@ -84,6 +141,25 @@ Your contributions are invaluable in making this repository a comprehensive and 
 Please make sure to update changes as appropriate.
 
 ### I'll make sure to merge it❤
+<summary><h2><img src="https://emojis.slackmojis.com/emojis/images/1471045839/793/computerrage.gif?1471045839" align="center"
+                width="28" />
+
+## Contributors ✨
+
+Thanks goes to these wonderful people 💜
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/rko0211"><img src="https://avatars.githubusercontent.com/u/97402824?v=4" width="100px;" alt=""/><br /><sub><b>Prakash Mondal</b></sub></a><br /><a href="#maintenance-Tlazypanda" title="Maintenance">🚧✍️🖥️</a></td>
+    <td align="center"><a href="https://github.com/Suman599"><img src="https://avatars.githubusercontent.com/u/118666545?v=4" width="100px;" alt=""/><br /><sub><b>Suman599</b></sub></a><br /><a title="Code">💻</a></td>
+   <td align="center"><a href="https://github.com/Sneha123-zudo"><img src="https://avatars.githubusercontent.com/u/145490348?v=4" width="100px;" alt=""/><br /><sub><b>Sneha123-zudo</b></sub></a><br /><a  title="Code">💻</a></td>
+   <td align="center"><a href="https://github.com/komal-agarwal5"><img src="https://avatars.githubusercontent.com/u/122633300?v=4" width="100px;" alt=""/><br /><sub><b>Komal Agarwal</b></sub></a><br /> <a  title="Code">💻</a></td>
+   <td align="center"><a href="https://github.com/swarnade"><img src="https://avatars.githubusercontent.com/u/78968218?v=4" width="100px;" alt=""/><br /><sub><b>Swarnadeep Saha Poddar</b></sub></a><br /><a  title="Code">💻</a></td>
+   <td align="center"><a href="https://github.com/apu52"><img src="https://avatars.githubusercontent.com/u/114172928?v=4" width="100px;" alt=""/><br /><sub><b>Arpan Chowdhury</b></sub></a><br /><a title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/lord-cyclone100"><img src="https://avatars.githubusercontent.com/u/121711381?v=4" width="100px;" alt=""/><br /><sub><b>Sangneel Deb</b></sub></a><br /><a title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/arghadipmanna101"><img src="https://avatars.githubusercontent.com/u/130065095?s=400&u=3d86e95e3940e7b91c825fbf3445162d09469611&v=4" width="100px;" alt=""/><br /><sub><b>Arghadip Manna</b></sub></a><br /><a title="Code">💻</a></td>
+   
+  </tr>
+  </table>
 
 ## License 
 
@@ -95,8 +171,13 @@ If you have any suggestions,improvements feel free to raise an issue stating you
 
 ### <div align="center">Happy learning ! 📚✨</div>
 
-<h6 align="center"> ©  rko0211 All Rights Reserved</h6>
 
-<h6 align="center">© jgec previous year question paper <br>
-All Rights Reserved</h6>
+
+## Let's Enjoy in the exam hall!!
+<br>
+<summary><h2><img src="https://media.giphy.com/media/JRPftUYuIRw3axuh5y/giphy-downsized-large.gif" align="center"
+                width="1000" />
+
+<h6 text-align="center"> ©  rko0211 All Rights Reserved</h6><br>
+<center><h6 text-align="center"> © jgec previous year question paper All Rights Reserved</h6></center><br>
 
