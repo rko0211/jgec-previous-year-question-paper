@@ -107,6 +107,10 @@ body.dark-mode {
   background-color: #444;
 }
 
+.textBlack {
+  color: #000000;
+}
+
 /*.dark{
   background-color: black;
   color:whitesmoke;
@@ -245,12 +249,13 @@ header ul li a:hover {
   background-color: lightgrey;
   flex-wrap: wrap;
   box-shadow: -1px 0 10px hsl(0, 0%, 0%);
-  margin: 23px 23px;
+  /* margin: 23px 23px; */
   margin-bottom: 30px;
   padding: 5px;
   display: flex;
   justify-content: center;
-
+  flex-direction: column;
+  align-items: center;
 
 }
 
@@ -284,41 +289,41 @@ header ul li a:hover {
   align-items: center;
   width: max(10vw, 100px);
   height: max(3vw, 30px);
-  font-size: max(1vw,10px);
+  font-size: max(1vw, 10px);
   font-weight: 500;
   justify-content: center;
   position: relative;
   overflow: hidden;
   transition: 0.8s;
   z-index: 10;
-  
-  
+
+
 
 }
 
-.yrpage:hover{
-  color:black;
-  font-weight:700;
+.yrpage:hover {
+  color: black;
+  font-weight: 700;
   /* text-shadow: 0 0 5px black; */
 }
 
-.yrpage::before{
-  content:"";
-  position:absolute;
-  width:0%;
-  height:0%;
-  left:50%;
+.yrpage::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  left: 50%;
   background: rgb(33, 150, 243);
   z-index: -1;
   transition: 0.8s;
-  top:50%;
+  top: 50%;
   border-radius: 50%;
 }
 
-.yrpage:hover::before{
+.yrpage:hover::before {
   width: 400%;
   height: 400%;
-  scale:200%;
+  scale: 200%;
 }
 
 .about {
@@ -803,25 +808,27 @@ footer .f-ele1 span {
   }
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
-#to-btn{
- background-color: #2196F3;
- position: fixed;
- bottom: 16px;
- right: 32px;
- width: 50px;
- height: 50px;
- border: none;
- border-radius: 50%;
- display: flex;
- align-items: center;
- justify-content: center;
- font-size: 32px;
- color: rgb(255, 255, 255);
- transition: all .4s;
+
+#to-btn {
+  background-color: #2196F3;
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: rgb(255, 255, 255);
+  transition: all .4s;
 }
-#to-btn:hover{
+
+#to-btn:hover {
   background-color: #3B5998;
 }
