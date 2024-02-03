@@ -725,6 +725,7 @@ footer .f-ele1 span {
     left: 0;
     background: #445964;
     display: none;
+    z-index: 999;
   }
 
   header.active nav {
