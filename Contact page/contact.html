@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=nunito@400&f[]=bebas-neue@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="dark-mode.css">
+</head>
+
+<body>
+  <!-- Loading Animation -->
+  <div class="loading-overlay">
+    <div class="loading-spinner"></div>
+  </div>
+
+
+  <header>
+    <h1><a href="/index.html" class="clicked-glow">JGEC Previous Year Question Paper</a></h1>
+  </header>
+  <nav>
+    <ul>
+      <!-- We'll add an ID to the "Contact Us" link for easier removal -->
+      <li><a href="contact.html" id="contact-link" class="clicked-glow">Contact Us</a></li>
+      <!-- Add more checklists here -->
+    </ul>
+  </nav>
+  <!-- <main> -->
+  <!-- <section class="contact-section"> -->
+  <div class="heading">
+    <h1>Contact Us</h1>
+    <p>If you have any questions, feedback, or suggestions, feel free to reach out to us using the contact form below:
+    </p>
+  </div>
+
+  <div class="Formcontainer">
+
+    <form id="contact-form" method="post" onsubmit="return validateForm()" action="https://formspree.io/f/xwkdveyv"
+      name="myform">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <p id="errormsg1" class="errormsg"></p>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <p id="errormsg2" class="errormsg"></p>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required>
+      <p id="errormsg3" class="errormsg"></p>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+      <p id="errormsg4" class="errormsg"></p>
+      <input type="submit" name="" id="btn" value="submit">
+    </form>
+  </div>
+  <div id="particles-js"></div>
+
+  <script src="particles.js"></script>
+
+  <!-- </section> -->
+  <!-- </main> -->
+
+  <script src="app.js"></script>
+  <script src="contact.js"></script>
+</body>
+
+</html>

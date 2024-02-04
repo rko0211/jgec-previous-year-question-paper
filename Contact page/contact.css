@@ -1,0 +1,350 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+}
+
+#contact-form input {
+  font-family: 'Roboto', 'Arial', 'Helvetica', 'sans-serif';
+  /* Font family */
+  font-size: 16px;
+  /* Font size */
+  color: #fff !important;
+  /* Text color */
+}
+
+#contact-form textarea {
+  font-family: 'Roboto', 'Arial', 'Helvetica', 'sans-serif';
+  /* Font family */
+  font-size: 16px;
+  /* Font size */
+  color: #fff !important;
+  /* Text color */
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  background: unset;
+  border-radius: 15px;
+  border: 1px solid #cccccc54;
+  color: white;
+}
+
+.heading {
+  color: white;
+}
+
+.dark-mode .heading {
+  color: #d9ed92;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #12ff00, #0fe600);
+  box-shadow: 20px 20px 60px #0ed900,
+    -20px -20px 60px #14ff00;
+
+}
+
+label {
+  color: #fff;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.Formcontainer {
+  border-radius: 5px;
+  background-color: #333;
+  /* background-color: #f2f2f2; */
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+  /* From https://css.glass */
+  background: rgba(52, 3, 228, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(32, 170, 240, 0.3);
+}
+
+
+
+
+.heading {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.heading h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.heading p {
+  text-align: center;
+}
+
+.dark-mode .Formcontainer {
+  /* From https://css.glass */
+  background: rgba(47, 47, 47, 0.34);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(47, 47, 47, 0.3);
+}
+
+#particles-js {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+
+body {
+  font-family: 'Lato', 'Montserrat', 'Noto Sans', 'Roboto Slab', 'Source Sans Pro', 'PT Sans', 'Droid Sans', 'Cabin', 'Quicksand', 'Merriweather', sans-serif;
+
+  background-color: #c7e3dcf9;
+  /* Light gray background */
+  background-color: #CDF5FD;
+}
+
+::selection {
+  background-color: #cdb4db;
+  color: #fff;
+}
+
+header {
+  color: #6e737cd3 !important;
+
+  padding: 10px;
+  text-align: center;
+  font-family: sans-serif;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+header h1 a {
+  text-decoration: none;
+  color: #fff;
+  color: #fff !important;
+  font-size: 2.1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  background: #77cbe9;
+  padding: 20px 10px;
+  /* border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px; */
+  text-align: center;
+  position: relative;
+}
+
+
+
+
+
+/* RESPONSIVENESS ADDTIN  */
+
+/* Header */
+header h1 {
+  font-size: 24px;
+}
+
+
+
+
+
+/* Media Query for screens between 601px to 1024px */
+
+
+/* style for the contact us form */
+.contact-section h2 {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 4px;
+
+  font-size: 40px;
+  margin-bottom: 0px !important;
+}
+
+.contact-section p {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+
+  font-size: 15px;
+  margin-top: 0px !important;
+}
+
+.contact-section form {
+  max-width: 400px;
+  /* Set a maximum width for the form to prevent it from stretching too wide */
+  margin: 0 auto;
+  /* Center the form horizontally */
+}
+
+.contact-section form label {
+  display: block;
+  /* Display labels as blocks (vertical) */
+  margin-bottom: 5px;
+  /* Add some spacing between labels */
+  font-weight: bold;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 2px;
+
+  font-size: 25px;
+}
+
+.contact-section form input,
+.contact-section form textarea {
+  width: 100%;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  /* Add some spacing between form elements */
+  border: 1px solid #ccc;
+  border-radius: 13px;
+  font-size: 16px;
+  background: #90e0ef;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  color: #2c2f34dc !important;
+  letter-spacing: 1px;
+  outline: none;
+
+}
+
+.contact-section form textarea {
+  resize: vertical;
+  /* Allow the textarea to be vertically resizable */
+}
+
+.contact-section form button {
+  padding: 10px 20px;
+  /* background-color: #333;
+  color: #eabb95; */
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  border-radius: 18px;
+  font-family: "Bebas Neue", sans-serif;
+  color: #444;
+  background-color: #90e0ef;
+  transition-duration: 300ms;
+  width: 100%;
+}
+
+.contact-section form button:hover {
+  /* background-color: #333; */
+  background-color: #90e0ef;
+  color: #1D5B79;
+}
+
+
+.errormsg {
+  width: 100%;
+  margin-bottom: 10px;
+  color: red;
+}
+
+/* Media Query for screens larger than 768px */
+@media screen and (min-width: 768px) {
+  .contact-section form {
+    display: flex;
+    /* Display the form elements in a row on larger screens */
+    flex-wrap: wrap;
+    /* Allow the form elements to wrap to the next row if needed */
+  }
+
+  .contact-section form label {
+    flex: 1 0 100%;
+    /* Make labels take full width on larger screens */
+    margin-right: 10px;
+    /* Add some spacing between labels and form elements */
+  }
+
+  /* .contact-section form input,
+  .contact-section form textarea { */
+  /* flex: 2 0 calc(50% - 15px); */
+  /* Make form elements take half width on larger screens */
+  /* } */
+
+  .contact-section form textarea {
+    resize: none;
+    /* Disable textarea resizing on larger screens */
+  }
+
+  .contact-section form button {
+    flex: 1 0 100%;
+    /* Make button take full width on larger screens */
+  }
+}
+
+
+
+
+
+
+
+main {
+  background: rgb(37, 59, 112);
+  background: linear-gradient(63deg, rgba(37, 59, 112, 1) 0%, rgba(15, 23, 42, 1) 100%);
+}
+
+
+
+body {
+  z-index: -10;
+  position: relative;
+}
+
+
+
+nav {
+  background: rgba(37, 59, 112, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+body {
+  background: rgb(21, 230, 220);
+  background: linear-gradient(312deg, rgb(13, 206, 106) 0%, rgb(49, 66, 106) 100%);
+}
