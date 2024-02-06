@@ -91,3 +91,5 @@ clickedGlowElements.forEach((element) => {
     }, 1000); // Remove the glow class after 0.5 seconds (duration of glow animation)
   });
 });
+
+document.getElementById("year").innerHTML = new Date().getFullYear();
