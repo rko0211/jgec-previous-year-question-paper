@@ -1,16 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-*{
-    margin: 0;
+* {
     padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
+
+
 body {
-    
 
-    font-family: "Lato", sans-serif;
-    background-color: powderblue
+    min-height: 100vh;
+    background-color: powderblue;
 
 }
-.cover{
+
+.cover {
     height: 60px;
 }
 
@@ -28,7 +34,7 @@ body {
 }
 
 .nav a {
-  
+
     display: block;
     color: black;
     padding: 16px;
@@ -48,33 +54,37 @@ body {
     background-color: #555;
     color: white;
 }
-.box{
-   
-   /* border: 2px solid black; */
+
+
+.box {
+
+    /* border: 2px solid black; */
     text-align: center;
-  
+
     margin-top: 20px;
 
-   
-    
+
+
 }
-.container{
+
+.container {
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
     justify-content: center;
     gap: 30px;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
-.card{
-   
-    flex: 1 ;
+.card {
+
+    flex: 1;
     margin: 20px 20px;
     background: #ffff;
-    box-shadow: 0 0 15px rgb(0,0,0,0.5);
+    box-shadow: 0 0 15px rgb(0, 0, 0, 0.5);
     text-align: center;
     padding: 10px;
     border-radius: 15px;
@@ -84,74 +94,81 @@ a{
     /* flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
-   width:  400px;
-   /* height: 300px; */
+    width: 400px;
+    /* height: 300px; */
 }
-.hd{
+
+.hd {
     text-align: center;
-   margin: 20px;
+    margin: 20px;
 }
-.hd h1{
-     font-size: 1.3rem;
-   
+
+.hd h1 {
+    font-size: 1.3rem;
+
 }
-.card img{
+
+.card img {
     flex: 1;
-    
-     height: 100px;
+
+    height: 100px;
     width: 300px;
     border-radius: 20px;
-   
+
     margin-top: 10px;
 }
 
-.heading{
+.heading {
     margin: 10px 0;
     font-size: 1.5rem;
     font-weight: bolder;
-  }
-  .card p{
+}
+
+.card p {
     font-size: 15px;
     -webkit-line-clamp: 3;
-    line-height: 20px; 
+    line-height: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 1rem;
     font-weight: bold;
-      /* margin-bottom: 30px; */
-  }
-  .btn{
+    /* margin-bottom: 30px; */
+}
+
+.btn {
     display: inline-block;
     background-color: red;
     margin-top: auto;
     padding: 10px 20px;
     border-radius: 5px;
-    -webkit-border-radius:5px;
-    -moz-border-radius:5px;
-    -ms-border-radius:5px;
-    -o-border-radius:5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
     font-size: 20px;
     color: white;
     margin-bottom: 10px;
-  }
-  .card:hover{
+}
+
+.card:hover {
     /* transform: scale(1.01);
 
     transition: all 0.2s ease; */
     border-radius: greenyellow;
     box-shadow: 0 5px 50px greenyellow;
-  }
-  .btn:hover{
-   background-color: transparent;
-   color: blue;
-   border: 2px solid red;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: blue;
+    border: 2px solid red;
     transform: scale(1.04);
     transition: all 0.2s ease;
-  }
+}
 
 
-
-  footer {
+/* Footer  start */
+footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -169,8 +186,9 @@ a{
     max-width: 550px;
     margin-top: 30px;
 }
-.additional > p{
-margin-top: 10px;
+
+.additional>p {
+    margin-top: 10px;
 }
 
 footer .f-ele1 {
@@ -178,7 +196,7 @@ footer .f-ele1 {
     margin: 1.5rem 0;
     padding: 0.5rem;
     background: #fff;
-   
+
     border-radius: 8px;
     width: fit-content;
     display: flex;
@@ -342,9 +360,15 @@ footer .f-ele1 span {
 #lab_social_icon_footer #social-em:hover {
     color: #f39c12;
 }
-.icn{
+
+.icn {
     margin: 10px;
 }
+
+/* End footer */
+/* Footer media queries */
+
+
 @media (max-width:590px) {
     footer .f-ele1 span {
         font-size: 0.8em;
@@ -402,5 +426,63 @@ footer .f-ele1 span {
         width: 2em;
     }
 
+
+}
+
+/* Ende footer */
+
+
+/* Card media queries */
+
+@media(max-width:400px) {
+    .common {
+
+        width: 100%;
+        margin: auto;
+        margin-bottom: 45px;
+    }
+
+    .yrimg {
+        width: 98%;
+    }
+
+    .flexcontainer {
+        flex-direction: column;
+
+    }
+
+}
+
+@media(max-width:349px) {
+    .addhead {
+        font-size: 1.5em;
+    }
+}
+
+@media(max-width:370px) {
+
+    .nav {
+        display: flex;
+        align-items: center;
+
+    }
+}
+
+
+/* Ende footer */
+@media(max-width:322px) {
+    .card {
+        width: 100%;
+        margin: auto;
+
+    }
+
+    .card img {
+        width: 100%;
+    }
+
+    .container {
+        flex-direction: column;
+    }
 
 }
