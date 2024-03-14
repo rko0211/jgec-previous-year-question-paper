@@ -89,7 +89,17 @@
 
 
 
-
+                <tr>
+                    <!-- Row number -->
+                    <th scope="row">4</th>
+                    <!-- Batch Year -->
+                    <td>-----</td>
+                    <!-- Semsester -->
+                    <td>......</td>
+                    <!-- Pdf link -->
+                    <td><a class="dwnld" href="...." download="">Download
+                        </a></td>
+                </tr>
 
                 <!-- Upto this section  -->
             </tbody>
@@ -141,11 +151,14 @@
             <a href="https://youtube.com/channel/UCA_aEA3HSV7s_urt_Nfbezg" target="_blank">Youtube</a>
             <!-- <a class="footer-link" href="https://rko0211.github.io/Resume/" target="_blank">Website</a> -->
 
-            <p class="copy-right">&copy; 2023 PRAKASH MONDAL &copy; LEARN TIME</p>
+            <p class="copy-right">&copy; <span id="year"></span> PRAKASH MONDAL <br><br> &copy; LEARN TIME</p>
 
 
         </div>
     </div>
+    <script>
+        document.getElementById('year').innerHTML = new Date().getFullYear();
+    </script>
 </body>
 
 </html>

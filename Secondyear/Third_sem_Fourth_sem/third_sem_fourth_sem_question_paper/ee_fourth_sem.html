@@ -136,11 +136,14 @@
             <a href="https://youtube.com/channel/UCA_aEA3HSV7s_urt_Nfbezg" target="_blank">Youtube</a>
             <!-- <a class="footer-link" href="https://rko0211.github.io/Resume/" target="_blank">Website</a> -->
 
-            <p class="copy-right">&copy; 2023 PRAKASH MONDAL &copy; LEARN TIME</p>
+            <p class="copy-right">&copy; <span id="year"></span> PRAKASH MONDAL <br><br> &copy; LEARN TIME</p>
 
 
         </div>
     </div>
+    <script>
+        document.getElementById('year').innerHTML = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
