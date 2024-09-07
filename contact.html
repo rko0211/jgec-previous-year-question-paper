@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us</title>
   <link href="https://api.fontshare.com/v2/css?f[]=nunito@400&f[]=bebas-neue@400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" href="contact.css">
   <link rel="stylesheet" href="dark-mode.css">
 </head>
@@ -36,22 +37,27 @@
 
   <div class="Formcontainer">
 
-    <form id="contact-form" method="post" onsubmit="return validateForm()" action="https://formspree.io/f/xwkdveyv"
-      name="myform">
-      <label for="name">Name:</label>
+    <form id="contact-form" name="myform" onsubmit="return handleForm(event)">
+
+      <label for="name">Name <sup style="color: red; font-size: larger; font-weight: 600;">*</sup></label>
       <input type="text" id="name" name="name" required>
       <p id="errormsg1" class="errormsg"></p>
-      <label for="email">Email:</label>
+
+      <label for="email">Email <sup style="color: red; font-size: larger; font-weight: 600;">*</sup></label>
       <input type="email" id="email" name="email" required>
       <p id="errormsg2" class="errormsg"></p>
-      <label for="phone">Phone Number:</label>
+
+      <label for="phone">Phone Number <sup style="color: red; font-size: larger; font-weight: 600;">*</sup></label>
       <input type="tel" id="phone" name="phone" required>
       <p id="errormsg3" class="errormsg"></p>
-      <label for="message">Message:</label>
+
+      <label for="message">Message <sup style="color: red; font-size: larger; font-weight: 600;">*</sup></label>
       <textarea id="message" name="message" rows="4" required></textarea>
       <p id="errormsg4" class="errormsg"></p>
-      <input type="submit" name="" id="btn" value="submit">
+
+      <input type="submit" id="btn" value="SUBMIT">
     </form>
+
   </div>
 
 
