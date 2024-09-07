@@ -282,7 +282,7 @@ header ul li a:hover {
 .yrpage {
   background: rgb(21, 20, 20);
   border-radius: 20px;
-  padding: 1%;
+  padding: 20px;
   float: left;
   display: flex;
   font-family: 'Montserrat', sans-serif;
@@ -426,6 +426,59 @@ header ul li a:hover {
 .cntlink {
   text-decoration: none;
 }
+
+/* Like part */
+
+.Likecontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  margin: 5rem auto;
+  border: 1px solid #60a5fa;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.star-btn,
+.counter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  font-weight: 600;
+  width: 50%;
+  text-align: center;
+  text-decoration: none;
+}
+
+.star-btn {
+  background-color: #f1f5f9;
+  border-right: 1px solid #60a5fa;
+  color: black;
+}
+
+.star-btn:hover {
+  background-color: #e2e8f0;
+}
+
+.counter-btn {
+  color: black;
+}
+
+.counter-btn:hover {
+  color: #1d4ed8;
+}
+
+/* Icon Styling */
+.far.fa-star {
+  font-size: 1rem;
+}
+
+/* End of Like part*/
+
+
 
 /* Footer section */
 
@@ -617,6 +670,41 @@ footer .f-ele1 span {
 }
 
 /* End footer */
+
+/* Developer */
+.footer-container {
+  text-align: center;
+  padding: 5rem auto;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.footer-text {
+  margin-top: 1.5rem;
+}
+
+.footer-highlight {
+  font-weight: 700;
+}
+
+.footer-link {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-spacing {
+  height: 2.5rem;
+  /* Provides 40px of spacing */
+}
+
+/* End */
 /* Footer media queries */
 
 
