@@ -57,6 +57,24 @@
     }
 
 
+    .contact-button {
+      display: inline-block;
+      margin-top: 1.8rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .contact-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 126, 95, 0.6);
+    }
 
     @keyframes zoomIn {
       0% {
@@ -108,11 +126,15 @@
     <div class="icon">📄❌</div>
     <h1>Oops! Question Papers Not Found</h1>
     <p>
-      <strong>Please try again later</strong> or <span style="color: #e63946;">reach out to the admin</span> for
-      support.
+      <strong>Please try again later</strong> or
+      <span style="color: #e63946;">reach out to the admin</span> for support.
     </p>
+    <a href="mailto:pm2545@cse.jgec.ac.in" class="contact-button">
+      📧 Contact Admin
+    </a>
   </div>
 </body>
+
 
 
 </html>
