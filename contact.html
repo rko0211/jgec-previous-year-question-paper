@@ -37,7 +37,7 @@
 
   <div class="Formcontainer">
 
-    <form id="contact-form" name="myform" onsubmit="return handleForm(event)">
+    <form id="contact-form" name="myform" onsubmit="handleForm(event)">
 
       <label for="name">Name <sup style="color: red; font-size: larger; font-weight: 600;">*</sup></label>
       <input type="text" id="name" name="name" required>
@@ -47,15 +47,16 @@
       <input type="email" id="email" name="email" required>
       <p id="errormsg2" class="errormsg"></p>
 
-      <label for="phone">Phone Number <sup style="color: red; font-size: larger; font-weight: 600;">*</sup></label>
+      <!-- <label for="phone">Phone Number <sup style="color: red; font-size: larger; font-weight: 600;">*</sup></label>
       <input type="tel" id="phone" name="phone" required>
-      <p id="errormsg3" class="errormsg"></p>
+      <p id="errormsg3" class="errormsg"></p> -->
 
       <label for="message">Message <sup style="color: red; font-size: larger; font-weight: 600;">*</sup></label>
       <textarea id="message" name="message" rows="4" required></textarea>
       <p id="errormsg4" class="errormsg"></p>
 
       <input type="submit" id="btn" value="SUBMIT">
+      
     </form>
 
   </div>

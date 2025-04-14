@@ -44,15 +44,15 @@ function validateForm() {
   }
 
   // Validate Phone Number
-  const phone = document.getElementById("phone").value;
-  if (phone.length !== 10) {
-    seterror("errormsg3", "*Phone number must be 10 digits.");
-    returnval = false;
-  }
-  if (!regex2.test(phone)) {
-    seterror("errormsg3", "*Phone number must contain only numeric digits.");
-    returnval = false;
-  }
+  // const phone = document.getElementById("phone").value;
+  // if (phone.length !== 10) {
+  //   seterror("errormsg3", "*Phone number must be 10 digits.");
+  //   returnval = false;
+  // }
+  // if (!regex2.test(phone)) {
+  //   seterror("errormsg3", "*Phone number must contain only numeric digits.");
+  //   returnval = false;
+  // }
 
   // Validate Message
   const message = document.getElementById("message").value;
@@ -72,41 +72,77 @@ const handleForm = async (event) => {
     return;
   }
 
-  const formData = new FormData(event.target);
-  formData.append("access_key", "0f6659eb-af94-45c8-9a73-166f0b4f78a3");
 
-  const object = Object.fromEntries(formData);
-  const json = JSON.stringify(object);
+  const btn = document.getElementById("btn");
 
-  const res = await fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json"
-    },
-    body: json
-  }).then((res) => res.json());
 
-  if (res.success) {
-    // Show SweetAlert2 success alert
-    Swal.fire({
-      title: "Success!",
-      text: "Message Sent Successfully!",
-      icon: "success",
-      confirmButtonText: "OK"
-    }).then(() => {
-      // Clear the form fields after alert confirmation
-      document.getElementById("contact-form").reset();
+  // Show spinner and disable button
+  btn.style.display = "none";
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  const payload = { name, email, message };
+
+
+
+  try {
+    const res = await fetch("http://localhost:5000/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
     });
-  } else {
-    // Show error alert if submission fails
+
+    const data = await res.json();
+
+    if (res.status === 200) {
+      Swal.fire({
+        title: "Success!",
+        text: `${data.message}`,
+        icon: "success",
+        confirmButtonText: "OK"
+      }).then(() => {
+        document.getElementById("contact-form").reset();
+      });
+    } else if (res.status === 400) {
+      Swal.fire({
+        title: "Warning!",
+        text: `${data.message}`,
+        icon: "warning",
+        confirmButtonText: "OK"
+      });
+    } else {
+      Swal.fire({
+        title: "Error!",
+        text: `${data.message || "Something went wrong."}`,
+        icon: "error",
+        confirmButtonText: "OK"
+      }).then(() => {
+        document.getElementById("contact-form").reset();
+      });
+    }
+  } catch (err) {
+    console.error("Error message:", err.message);
     Swal.fire({
       title: "Error!",
-      text: "Something Went Wrong. Please Try Again!",
+      text: `${"Something Went Wrong. Please Try Again!" || data.message || err.message}`,
       icon: "error",
       confirmButtonText: "OK"
+    }).then(() => {
+      document.getElementById("contact-form").reset();
     });
+
   }
+  finally {
+    // Hide spinner and enable button
+
+    btn.style.display = "inline";
+
+  }
+
 }
 
 
