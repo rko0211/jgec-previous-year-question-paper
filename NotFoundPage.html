@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Question Papers Not Found</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(270deg, #f6d365, #fda085, #f6d365);
+      background-size: 600% 600%;
+      animation: gradientMove 10s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 3rem 2rem;
+      border-radius: 1.5rem;
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      animation: zoomIn 1s ease-out;
+    }
+
+    .icon {
+      font-size: 4rem;
+      margin-bottom: 1.2rem;
+      animation: pulse 2s infinite;
+      color: #ff5e5e;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.7rem;
+      color: #333;
+    }
+
+    p {
+      font-size: 1.05rem;
+      color: #555;
+      line-height: 1.8;
+      padding: 0 10px;
+    }
+
+
+
+    @keyframes zoomIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.85);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        text-shadow: 0 0 0px #ff5e5e;
+      }
+
+      50% {
+        transform: scale(1.1);
+        text-shadow: 0 0 15px #ff5e5e;
+      }
+
+      100% {
+        transform: scale(1);
+        text-shadow: 0 0 0px #ff5e5e;
+      }
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="icon">📄❌</div>
+    <h1>Oops! Question Papers Not Found</h1>
+    <p>
+      <strong>Please try again later</strong> or <span style="color: #e63946;">reach out to the admin</span> for
+      support.
+    </p>
+  </div>
+</body>
+
+
+</html>
