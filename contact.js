@@ -67,6 +67,8 @@ function validateForm() {
 const handleForm = async (event) => {
   event.preventDefault(); // Prevent default form submission
 
+  const URL = `https://contact-form-backend-4sw0.onrender.com`;
+
   // Validate form before submission
   if (!validateForm()) {
     return;
@@ -88,7 +90,7 @@ const handleForm = async (event) => {
 
 
   try {
-    const res = await fetch("http://localhost:5000/api/contact", {
+    const res = await fetch(`${URL}/api/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
