@@ -4,7 +4,11 @@ const data = [
     paper: "2nd Sem",
     link: "2nd sem(21-25 batch) - Om Kumar Sah.pdf"
   },
-
+  {
+    batch: "23-27",
+    paper: "2nd Sem",
+    link: "1st_sem_2nd_sem_pdf/23_27_CE_2nd_SEM.pdf"
+  },
   {
     batch: "xx-xx",
     paper: "2nd Sem Internal-I",

@@ -9,6 +9,11 @@ const data = [
     paper: "3rd Sem",
     link: "3rd sem(21-25 batch) - Om Kumar Sah.pdf"
   },
+  {
+    batch: "23-27",
+    paper: "3rd Sem",
+    link: "3rd_sem_4th_sem pdf/23_27_CE_3rd_SEM - Subhankar Sarkar.pdf"
+  },
 
   {
     batch: "xx-xx",

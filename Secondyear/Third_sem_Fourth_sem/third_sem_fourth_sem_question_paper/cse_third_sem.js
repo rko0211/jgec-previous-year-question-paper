@@ -20,6 +20,11 @@ const data = [
     paper: "Digital Electronics",
     link: "https://drive.google.com/file/d/1ejs60RJZY_fiYu34xWmzRxdC76m1ZK0P/view"
   },
+  {
+    batch: "23-27",
+    paper: "3rd Sem Internal-2",
+    link: "3rd_sem_4th_sem pdf/23_27_CSE_3rd_SEM_Internal_2.pdf"
+  },
 
   {
     batch: "xx-xx",
