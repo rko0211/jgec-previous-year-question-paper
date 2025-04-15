@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -10,88 +11,136 @@
 body {
   min-height: 100vh;
   height: 100vh;
- 
- 
+
+
 }
 
- 
-  /* Header */
+/* Year Heading */
 
-  header {
-    /* position: absolute; */
-    width: 100%;
-    min-height: 66px;
-    background: white;
-    padding: 0 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px #888888;
-  }
-  
-  header .lgosection {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-    align-items: center;
-  
-  }
-  
-  header .gd {
-    text-decoration: none;
-    font-size: 2em;
-    font-weight: 600;
-    color: black;
-  }
-  
-  header .logo img {
-    text-decoration: none;
-    height: 30px;
-  }
-  
-  header ul {
-    position: relative;
-  
-  }
-  
-  header ul li {
-    list-style-type: none;
-    float: left;
-  }
-  
-  header ul li a {
-  
-    font-size: 1.1em;
-    padding: 20px 25px;
-    text-decoration: none;
-    display: flex;
-    justify-content: space-between;
-    color: black;
-  }
-  
-  header nav ul .unique a {
-    background: #2b93e3;
-    color: whitesmoke;
-  }
-  
-  header ul li a:hover {
-    background: #2b93e3;
-    color: whitesmoke;
-  }
-  
+.year-heading-container {
+  background-color: white;
+  padding: 30px 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+  text-align: center;
 
-  /* header end */
-  .flexcontainer{
-    padding-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-  
-  
+}
+
+.year-heading-container h1 {
+  font-size: 3em;
+  margin: 0;
+  color: #6a1b9a;
+  animation: bounce 1.5s infinite alternate;
+}
+
+.year-heading-container p {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #444;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
   }
 
-  .common{
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+@media(max-width:479px) {
+  .year-heading-container h1 {
+    font-size: 2.4em;
+  }
+
+  .year-heading-container p {
+    font-size: 0.9em;
+  }
+}
+
+/* Year Heading  End*/
+
+
+
+/* Header */
+
+header {
+  /* position: absolute; */
+  width: 100%;
+  min-height: 66px;
+  background: white;
+  padding: 0 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px #888888;
+}
+
+header .lgosection {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+header .gd {
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: 600;
+  color: black;
+}
+
+header .logo img {
+  text-decoration: none;
+  height: 30px;
+}
+
+header ul {
+  position: relative;
+
+}
+
+header ul li {
+  list-style-type: none;
+  float: left;
+}
+
+header ul li a {
+
+  font-size: 1.1em;
+  padding: 20px 25px;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+}
+
+header nav ul .unique a {
+  background: #2b93e3;
+  color: whitesmoke;
+}
+
+header ul li a:hover {
+  background: #2b93e3;
+  color: whitesmoke;
+}
+
+
+/* header end */
+.flexcontainer {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+
+
+}
+
+.common {
   flex: 1;
   border-radius: 10px;
   max-width: 410px;
@@ -103,94 +152,104 @@ body {
   margin: 23px 23px;
   margin-bottom: 30px;
   padding: 5px;
-  }
+}
 
-.common > img{
-  
+.common>img {
+
   border-radius: 10px;
   /* width: 388px;
   height: 250px; */
   width: 390px;
   height: 250px;
-  
+
 }
-.heading{
+
+.heading {
   /* margin: 10px 0;
   font-size: 3.5rem;
   font-weight: bolder;*/
-  font-weight: bolder; 
+  font-weight: bolder;
   font-size: 35px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.common p:hover{
+
+.common p:hover {
   color: blue;
 }
-.common p{
+
+.common p {
   font-size: 15px;
--webkit-line-clamp: 3;
-line-height: 20px; 
+  -webkit-line-clamp: 3;
+  line-height: 20px;
   margin-bottom: 30px;
 }
- .btn{
+
+.btn {
   display: inline-block;
   background-color: red;
   margin-top: auto;
   padding: 10px 20px;
   border-radius: 5px;
-  -webkit-border-radius:5px;
-  -moz-border-radius:5px;
-  -ms-border-radius:5px;
-  -o-border-radius:5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
   font-size: 20px;
   color: white;
   margin-bottom: 10px;
 }
-.common:hover{
+
+.common:hover {
   transform: scale(1.01);
   transition: all 0.2s ease;
 }
-.btn:hover{
- background-color: transparent;
- color: blue;
- border: 2px solid red;
+
+.btn:hover {
+  background-color: transparent;
+  color: blue;
+  border: 2px solid red;
   transform: scale(1.04);
   transition: all 0.2s ease;
 }
 
-hr{
+hr {
   border: dotted rgb(10, 179, 236) 6px;
- border-bottom: none;
- width: 4%;
- margin: 100px auto 100px auto;
- 
+  border-bottom: none;
+  width: 4%;
+  margin: 100px auto 100px auto;
+
 }
 
-.contact-me{
+.contact-me {
   text-align: center;
-   margin: 45px auto 80px auto;
+  margin: 45px auto 80px auto;
 }
-.contact-me a{
+
+.contact-me a {
   color: black;
-  font-family:'Montserrat',sans-serif ;
-  margin: 10px 20px ;
+  font-family: 'Montserrat', sans-serif;
+  margin: 10px 20px;
   text-decoration: none;
 
 }
-.contact-me a:hover{
+
+.contact-me a:hover {
   color: royalblue;
 }
-.contact-me a:active{
+
+.contact-me a:active {
   color: gold;
 }
-.links{
+
+.links {
   color: blue;
 }
 
 
 
-.contact-message{
- 
+.contact-message {
+
   margin: 40px auto 60px;
   font-size: 1.01rem;
 }
@@ -207,7 +266,7 @@ hr{
   -webkit-border-radius: 8;
   -moz-border-radius: 8;
   border-radius: 8px;
-  font-family: 'Montserrat',sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #ffffff;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
@@ -246,7 +305,7 @@ footer {
   padding: 20px;
   color: white;
   background: #36474f;
-  
+
 }
 
 .additional {
@@ -425,6 +484,7 @@ footer .f-ele1 span {
 #lab_social_icon_footer #social-em:hover {
   color: #f39c12;
 }
+
 /* End */
 
 
@@ -433,20 +493,20 @@ footer .f-ele1 span {
 
 @media(max-width:400px) {
   .common {
-    
+
     width: 100%;
     margin: auto;
     margin-bottom: 45px;
   }
 
-  .common > img {
+  .common>img {
     width: 98%;
   }
 
   .flexcontainer {
-   
+
     flex-direction: column;
-  
+
   }
 
 }
@@ -531,6 +591,7 @@ footer .f-ele1 span {
 
   header nav {
     position: absolute;
+    z-index: 9999 !important;
     width: 100%;
     top: 66px;
     left: 0;
