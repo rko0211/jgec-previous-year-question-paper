@@ -15,7 +15,7 @@ const contributors = [
   { name: "Mursalim Saha", url: "https://www.linkedin.com/in/mursalim-saha-3a2621254" },
   { name: "Prajwal Lakra", url: "https://www.linkedin.com/in/prajwal-lakra-70a10428b/" },
   { name: "Md Shahil", url: "https://www.linkedin.com/in/md-shahil-96ba1787/" },
-
+  { name: "Gopal Mondal", url: "https://www.linkedin.com/in/gopal-mandal-3a22a8231" },
 ];
 
 const list = document.getElementById("contributorsList");
