@@ -48,42 +48,7 @@
                     </th>
                 </tr>
             </thead>
-            <tbody>
-                <!-- You can edit only Tbody section Other transformation 
-                
-                would not be conscidered-->
-
-                <!-- WRITE CODE HERE  -->
-                <tr>
-                    <!-- Row number -->
-                    <th scope="row">1</th>
-                    <!-- Batch Year -->
-                    <td> 22-26</td>
-                    <!-- Semester -->
-                    <td> 1st Sem</td>
-                    <!-- Pdf link -->
-                    <td> <a class="dwnld" href="1st_sem_2nd_sem_pdf/22_26_ECE_1st_sem.pdf"
-                            target="_blank">Download </a></td>
-                </tr>
-
-
-                <tr>
-                    <th scope="row">2</th>
-                    <td>......</td>
-                    <td>1st Sem Internal</td>
-                    <td><a class="dwnld" href="......">Download </a></td>
-                </tr>
-
-                <tr>
-                    <th scope="row">3</th>
-                    <td>.......</td>
-                    <td>1st Sem</td>
-                    <td><a class="dwnld" href="......">Download </a></td>
-                </tr>
-
-
-
-
+            <tbody id="ece1stSemTableBody">
 
                 <!-- Upto this section  -->
             </tbody>
@@ -140,6 +105,7 @@
 
         </div>
     </div>
+    <script src="ece_first_sem.js" defer></script>
     <script>
         document.getElementById('year').innerHTML = new Date().getFullYear();
     </script>

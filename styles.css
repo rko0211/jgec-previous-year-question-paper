@@ -411,11 +411,11 @@ header ul li a:hover {
 
 .contributername {
   margin-top: 100px;
-
+  margin-bottom: 100px;
   text-align: center;
 }
 
-.cntlist {
+/* .cntlist {
   display: inline-block;
 }
 
@@ -425,6 +425,44 @@ header ul li a:hover {
 
 .cntlink {
   text-decoration: none;
+} */
+
+
+.cntlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  gap: 5px;
+  list-style: none;
+  padding: 0;
+}
+
+.cntlist li {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-weight: 500;
+}
+
+.cntlink {
+  text-decoration: none;
+  color: #0077b5;
+  /* LinkedIn blue */
+}
+
+.cntlink:hover {
+  text-decoration: underline;
+}
+
+.cntlist li::after {
+  content: "|";
+  margin: 0 8px;
+}
+
+.cntlist li:last-child::after {
+  content: "";
 }
 
 /* Like part */
