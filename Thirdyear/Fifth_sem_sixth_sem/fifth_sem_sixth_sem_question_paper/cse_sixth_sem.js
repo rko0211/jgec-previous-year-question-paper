@@ -35,6 +35,11 @@ const data = [
     link: "5th_sem_6th_sem_pdf/6th_sem_21_25_internal-2.pdf"
   },
   {
+    batch: "21-25",
+    paper: "6th Sem",
+    link: "5th_sem_6th_sem_pdf/21_25_CSE_6th_SEM.pdf"
+  },
+  {
     batch: "xx-xx",
     paper: "6th Sem",
     link: "../../../NotFoundPage.html"
