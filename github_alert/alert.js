@@ -4,7 +4,7 @@ class GitHubStarReminder {
       repoUrl: 'https://github.com/rko0211/jgec-previous-year-question-paper',
       title: 'Enjoying this project?',
       message: 'Give it a <b>⭐</b> on <b>GitHub</b> to support our work!',
-      showDelay: 3000,
+      showDelay: 2000,
       localStorageKey: 'githubAlertDismissed',
       ...options
     };
