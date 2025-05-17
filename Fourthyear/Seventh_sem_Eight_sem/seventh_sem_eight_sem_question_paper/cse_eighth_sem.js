@@ -1,5 +1,10 @@
 const data = [
   {
+    batch: "20-24",
+    paper: "8th Sem",
+    link: "7th_sem_8th_sem_pdf/20_24_CSE_8th_Sem.pdf"
+  },
+  {
     batch: "21-25",
     paper: "8th Sem Internal-1",
     link: "7th_sem_8th_sem_pdf/21_25_CSE_8th_Sem_Internal1.pdf"
