@@ -20,7 +20,11 @@ const data = [
     paper: "4th Sem",
     link: "3rd_sem_4th_sem pdf/22_26_CSE_4th_Sem - Prajwal Lakra.pdf"
   },
-
+  {
+    batch: "23-27",
+    paper: "4th Sem Internal-1+2",
+    link: "3rd_sem_4th_sem pdf/23_27_CSE_4th_Sem_Internal_1+2.pdf"
+  },
   {
     batch: "xx-xx",
     paper: "4th Sem Internal-I",
