@@ -1,8 +1,8 @@
 const data = [
   {
-    batch: "xx-xx",
+    batch: "21-25",
     paper: "7th Sem",
-    link: "../../../NotFoundPage.html"
+    link: "7th_sem_8th_sem_pdf/21_25_IT_7th_Sem.pdf"
   },
 
   {
