@@ -10,6 +10,11 @@ const data = [
     link: "1st_sem_2nd_sem_pdf/23_27_CE_2nd_SEM.pdf"
   },
   {
+    batch: "24-28",
+    paper: "2nd Sem",
+    link: "1st_sem_2nd_sem_pdf/24_28_CE_2nd_Sem- Ambika Bag.pdf"
+  },
+  {
     batch: "xx-xx",
     paper: "2nd Sem Internal-I",
     link: "../../../NotFoundPage.html"
