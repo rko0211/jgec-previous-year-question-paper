@@ -20,7 +20,7 @@ const contributors = [
   { name: "Rajdeep Khatik", url: "#" },
   { name: "Subhankar sarkar", url: "#" },
   { name: "Sirajul Haque", url: "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav" },
-  { name: "Aditya Das", url: "www.linkedin.com/in/adidas101" },
+  { name: "Aditya Das", url: "https://www.linkedin.com/in/adidas101" },
   { name: "Ambika Bag", url: "#" }
 ];
 
