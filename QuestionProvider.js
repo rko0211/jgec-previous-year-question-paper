@@ -21,7 +21,8 @@ const contributors = [
   { name: "Subhankar sarkar", url: "#" },
   { name: "Sirajul Haque", url: "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav" },
   { name: "Aditya Das", url: "https://www.linkedin.com/in/adidas101" },
-  { name: "Ambika Bag", url: "#" }
+  { name: "Ambika Bag", url: "#" },
+  { name: "Writabrata Chakraborti", url: "https://www.linkedin.com/in/writabratacs" },
 ];
 
 const list = document.getElementById("contributorsList");

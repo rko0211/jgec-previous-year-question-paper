@@ -20,11 +20,6 @@ const data = [
     link: "https://drive.google.com/drive/folders/1Ev5mArq7aUd0sAxu8ARU_qrOlwOUKTYb"
   },
   {
-    batch: "2016 & 2019",
-    paper: "Image <br> Processing",
-    link: "../../../NotFoundPage.html"
-  },
-  {
     batch: "21-25",
     paper: "6th Sem Internal-1",
     link: "5th_sem_6th_sem_pdf/6th_sem_21_25_internal-1.pdf"
@@ -38,6 +33,16 @@ const data = [
     batch: "21-25",
     paper: "6th Sem",
     link: "5th_sem_6th_sem_pdf/21_25_CSE_6th_SEM.pdf"
+  },
+  {
+    batch: "22-26",
+    paper: "6th Sem Internal",
+    link: "5th_sem_6th_sem_pdf/22_26_CSE_6th_Sem_Internal-Writabrata Chakraborti.pdf"
+  },
+  {
+    batch: "22-26",
+    paper: "6th Sem",
+    link: "5th_sem_6th_sem_pdf/22_26_CSE_6th_Sem-Writabrata Chakraborti.pdf"
   },
   {
     batch: "xx-xx",

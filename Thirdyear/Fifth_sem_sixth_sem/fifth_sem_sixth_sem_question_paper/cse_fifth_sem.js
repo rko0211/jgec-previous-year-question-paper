@@ -16,13 +16,18 @@ const data = [
   },
   {
     batch: "22-26",
+    paper: "5th Sem Internal",
+    link: "5th_sem_6th_sem_pdf/22_26_CSE_5th_Sem_Internal-Writabrata Chakraborti.pdf"
+  },
+  {
+    batch: "22-26",
     paper: "5th Sem",
     link: "5th_sem_6th_sem_pdf/22_26_CSE_5th_SEM.pdf"
   },
 
   {
     batch: "23-27",
-    paper: "5th Sem Internal-1+2",
+    paper: "5th Sem Internal",
     link: "5th_sem_6th_sem_pdf/23_27_CSE_5th_SEM_Internals-1+2 - Aditya Das.pdf"
   },
   {
