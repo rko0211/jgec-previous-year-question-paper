@@ -27,8 +27,125 @@ const contributors = [
 
 const list = document.getElementById("contributorsList");
 
-contributors.forEach((contributor) => {
-  const li = document.createElement("li");
-  li.innerHTML = `<a class="cntlink" href="${contributor.url}" target="_blank">${contributor.name}</a>`;
-  list.appendChild(li);
-});
+function capitalizeName(name) {
+
+  return name
+    .toLowerCase()
+    .split(" ")
+    .filter(word => word.trim() !== "")
+    .map(word =>
+      word.charAt(0).toUpperCase() + word.slice(1)
+    )
+    .join(" ");
+}
+
+// remove duplicates (case-insensitive)
+function getUniqueContributors(data) {
+
+  const uniqueMap = new Map();
+
+  data.forEach(contributor => {
+
+    const formattedName = capitalizeName(contributor.name);
+
+    const formattedUrl = contributor.url.trim();
+
+    // unique key (case-insensitive)
+    const key =
+      formattedName.toLowerCase() +
+      "|" +
+      formattedUrl.toLowerCase();
+
+    if (!uniqueMap.has(key)) {
+
+      uniqueMap.set(key, {
+        name: formattedName,
+        url: formattedUrl
+      });
+    }
+  });
+
+  return [...uniqueMap.values()];
+}
+
+
+function renderContributors() {
+
+  list.innerHTML = "";
+
+  const uniqueContributors =
+    getUniqueContributors(contributors);
+
+  uniqueContributors.forEach((contributor) => {
+
+    const li = document.createElement("li");
+
+    li.innerHTML = `
+      <a class="cntlink"
+         href="${contributor.url}"
+         target="_blank">
+         ${contributor.name}
+      </a>
+    `;
+
+    list.appendChild(li);
+  });
+}
+
+// Initial render
+renderContributors();
+
+
+
+async function loadContributors() {
+
+  try {
+
+    // primary backend
+    const response = await fetch("https://jgec-pyqs-backend-service.up.railway.app/api/get-linkdin-profiles");
+
+    if (!response.ok) {
+      throw new Error("Server 1 failed");
+    }
+
+    const result = await response.json();
+
+    contributors.push(
+      ...result.data.map(item => ({
+        name: item.name,
+        url: item.linkedin
+      }))
+    );
+
+  } catch (err1) {
+
+    try {
+
+      // fallback backend
+      const response = await fetch("https://jgec-pyqs-backend-service.onrender.com/api/get-linkdin-profiles");
+
+      if (!response.ok) {
+        throw new Error("Server 2 failed");
+      }
+
+      const result = await response.json();
+
+      contributors.push(
+        ...result.data.map(item => ({
+          name: item.name,
+          url: item.linkedin
+        }))
+      );
+
+    } catch (err2) {
+      console.log("Server error: ", err2);
+    }
+
+  } finally {
+
+    renderContributors();
+  }
+}
+
+
+loadContributors();
