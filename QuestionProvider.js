@@ -102,7 +102,7 @@ async function loadContributors() {
   try {
 
     // primary backend
-    const response = await fetch("https://jgec-pyqs-backend-service.up.railway.app/api/get-linkdin-profiles");
+    const response = await fetch(`${backendService.URL1}/api/get-linkdin-profiles`);
 
     if (!response.ok) {
       throw new Error("Server 1 failed");
@@ -122,7 +122,7 @@ async function loadContributors() {
     try {
 
       // fallback backend
-      const response = await fetch("https://jgec-pyqs-backend-service.onrender.com/api/get-linkdin-profiles");
+      const response = await fetch(`${backendService.URL2}/api/get-linkdin-profiles`);
 
       if (!response.ok) {
         throw new Error("Server 2 failed");

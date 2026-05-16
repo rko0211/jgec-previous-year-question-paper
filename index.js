@@ -1,8 +1,8 @@
 async function serverHealthCheck() {
 
   const servers = [
-    "https://jgec-pyqs-backend-service.up.railway.app/health",
-    "https://jgec-pyqs-backend-service.onrender.com/health"
+    `${backendService.URL1}/health`,
+    `${backendService.URL2}/health`
   ];
 
   const results = await Promise.allSettled(
