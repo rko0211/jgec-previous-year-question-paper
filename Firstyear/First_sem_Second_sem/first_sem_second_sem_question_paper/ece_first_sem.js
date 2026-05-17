@@ -9,7 +9,7 @@ const ece1stSemData = [
 loadQuestionPapers({
   tbodyId: "ece1stSemTableBody",
   data: ece1stSemData,
-  semesterLabel: "1st Sem",
+  semesterLabel: "1st",
   params: {
     year: "First Year",
     semester: "First Semester",

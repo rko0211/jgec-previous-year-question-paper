@@ -7,7 +7,9 @@ async function loadQuestionPapers({
 }) {
 
   const tbody = document.getElementById(tbodyId);
+
   const loader = document.createElement("div");
+
   loader.innerText = "Loading...";
 
   loader.style.textAlign = "center";
@@ -15,75 +17,155 @@ async function loadQuestionPapers({
   loader.style.fontSize = "24px";
   loader.style.fontWeight = "bold";
   loader.style.marginTop = "20px";
-  tbody.appendChild(loader);
 
-  function renderQuestionPapers() {
-    tbody.removeChild(loader);
-    tbody.innerHTML = "";
-    data.forEach((item, index) => {
+  tbody.parentElement.appendChild(loader);
+
+  // pagination state
+  let currentPage = 1;
+
+  let loading = false;
+
+  let hasMore = true;
+
+  // optimized rendering
+  function renderQuestionPapers(rows, append = false) {
+
+    if (!append) {
+      tbody.innerHTML = "";
+    }
+
+    const fragment = document.createDocumentFragment();
+
+    rows.forEach((item, index) => {
 
       const tr = document.createElement("tr");
 
       tr.innerHTML = `
-        <th scope="row">${index + 1}</th>
+        <th scope="row">
+          ${append ? tbody.children.length + index + 1 : index + 1}
+        </th>
+
         <td>${item.batch}</td>
+
         <td>${item.paper}</td>
+
         <td>
-          <a class="dwnld" href="${item.link}" target="_blank">
+          <a
+            class="dwnld"
+            href="${item.link}"
+            target="_blank"
+          >
             Download
           </a>
         </td>
       `;
 
-      tbody.appendChild(tr);
+      fragment.appendChild(tr);
     });
+
+    tbody.appendChild(fragment);
   }
 
-  try {
+  // render hardcoded data first
+  renderQuestionPapers(data);
 
-    // Primary backend
-    let response = await fetch(
-      `${backendService.URL1}/api/get-question-papers-for-particular-year-semester-department?${new URLSearchParams(params)}`
-    );
+  async function fetchQuestionPapers() {
 
-    // Fallback backend
-    if (!response.ok) {
+    if (loading || !hasMore) return;
 
-      response = await fetch(
-        `${backendService.URL2}/api/get-question-papers-for-particular-year-semester-department?${new URLSearchParams(params)}`
+    loading = true;
+
+    try {
+
+      // Primary backend
+      let response = await fetch(
+        `http://localhost:5000/api/get-question-papers-for-particular-year-semester-department?${new URLSearchParams({
+          ...params,
+          page: currentPage,
+          limit: 20
+        })}`
       );
 
+      // Fallback backend
       if (!response.ok) {
-        throw new Error("Both servers failed");
+
+        response = await fetch(
+          `${backendService.URL2}/api/get-question-papers-for-particular-year-semester-department?${new URLSearchParams({
+            ...params,
+            page: currentPage,
+            limit: 20
+          })}`
+        );
+
+        if (!response.ok) {
+          throw new Error("Both servers failed");
+        }
       }
-    }
 
-    const result = await response.json();
+      const result = await response.json();
 
-    data.push(
-      ...result.data.map(item => ({
+      // stop if no more data
+      if (result.data.length === 0) {
+
+        hasMore = false;
+
+        loader.innerHTML = "";
+        tbody.parentElement.removeChild(loader);
+        renderQuestionPapers([
+          {
+            batch: "xx-xx",
+            paper: `${semesterLabel} Sem Internals`,
+            link: notFoundLink
+          }
+        ], true);
+
+        return;
+      }
+
+      const newRows = result.data.map(item => ({
+
         batch: item.batch,
+
         paper:
           item.type === "Both Internals"
-            ? `${semesterLabel} Internals`
-            : `${semesterLabel} ${item.type}`,
+            ? `${semesterLabel} Sem Internals`
+            : item.type === "Semester"
+              ? `${semesterLabel} ${item.type}`
+              : `${semesterLabel} Sem ${item.type}`,
+
         link: item.file_url
-      }))
-    );
+      }));
 
-    // Extra dummy item
-    data.push({
-      batch: "xx-xx",
-      paper: `${semesterLabel} Internals`,
-      link: notFoundLink
-    });
+      // keep your existing architecture
+      data.push(...newRows);
 
-  } catch (error) {
+      // append only new rows
+      renderQuestionPapers(newRows, true);
 
-    console.log("Server error:", error);
+      currentPage++;
 
-  } finally {
+    } catch (error) {
 
-    renderQuestionPapers();
+      console.log("Server error:", error);
+
+      loader.innerText = "Server Error";
+
+    } finally {
+      loading = false;
+    }
   }
+
+  // lazy loading
+  const observer = new IntersectionObserver(entries => {
+
+    if (entries[0].isIntersecting) {
+      fetchQuestionPapers();
+    }
+
+  });
+
+  observer.observe(loader);
+
+  // initial fetch
+  fetchQuestionPapers();
 }
