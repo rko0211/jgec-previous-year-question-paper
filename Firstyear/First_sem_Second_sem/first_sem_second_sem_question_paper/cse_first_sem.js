@@ -1,28 +1,13 @@
-const data = [
-  {
-    batch: "xx-xx",
-    paper: "1st Sem",
-    link: "../../../NotFoundPage.html"
-  },
+const cse1stSemData = [];
 
-  {
-    batch: "xx-xx",
-    paper: "1st Sem Internal-I",
-    link: "../../../NotFoundPage.html"
+
+loadQuestionPapers({
+  tbodyId: "cse1stSemTableBody",
+  data: cse1stSemData,
+  semesterLabel: "1st Sem",
+  params: {
+    year: "First Year",
+    semester: "First Semester",
+    department: "CSE"
   }
-];
-
-const tbody = document.getElementById("cse1stSemTableBody");
-
-data.forEach((item, index) => {
-  const tr = document.createElement("tr");
-
-  tr.innerHTML = `
-        <th scope="row">${index + 1}</th>
-        <td>${item.batch}</td>
-        <td>${item.paper}</td>
-        <td><a class="dwnld" href="${item.link}" target="_blank">Download</a></td>
-    `;
-
-  tbody.appendChild(tr);
 });
