@@ -8,26 +8,20 @@ async function loadQuestionPapers({
 
   const tbody = document.getElementById(tbodyId);
 
-  const loader = document.createElement("div");
+  // ================= LOADER =================
+  const loader = document.getElementById("loadingContainer");
 
-  loader.innerText = "Loading...";
 
-  loader.style.textAlign = "center";
-  loader.style.color = "blue";
-  loader.style.fontSize = "24px";
-  loader.style.fontWeight = "bold";
-  loader.style.marginTop = "20px";
-
-  tbody.parentElement.appendChild(loader);
-
-  // pagination state
+  // ================= PAGINATION =================
   let currentPage = 1;
 
   let loading = false;
 
   let hasMore = true;
 
-  // optimized rendering
+  const limit = 10;
+
+  // ================= RENDER =================
   function renderQuestionPapers(rows, append = false) {
 
     if (!append) {
@@ -66,62 +60,83 @@ async function loadQuestionPapers({
     tbody.appendChild(fragment);
   }
 
-  // render hardcoded data first
+  // ================= INITIAL LOCAL DATA =================
   renderQuestionPapers(data);
 
+  // ================= FETCH =================
   async function fetchQuestionPapers() {
 
     if (loading || !hasMore) return;
 
     loading = true;
 
+    loader.style.display = "block";
+    loader.innerText = "Loading...";
+
     try {
 
-      // Primary backend
-      let response = await fetch(
-        `http://localhost:5000/api/get-question-papers-for-particular-year-semester-department?${new URLSearchParams({
-          ...params,
-          page: currentPage,
-          limit: 20
-        })}`
-      );
+      let response;
 
-      // Fallback backend
-      if (!response.ok) {
+      // ================= PRIMARY =================
+      try {
 
         response = await fetch(
-          `${backendService.URL2}/api/get-question-papers-for-particular-year-semester-department?${new URLSearchParams({
+          `${backendService.URL1}/api/get-question-papers-for-particular-year-semester-department?${new URLSearchParams({
             ...params,
             page: currentPage,
-            limit: 20
+            limit
           })}`
         );
 
-        if (!response.ok) {
-          throw new Error("Both servers failed");
+      } catch {
+
+        // ================= FALLBACK =================
+        try {
+
+          response = await fetch(
+            `${backendService.URL2}/api/get-question-papers-for-particular-year-semester-department?${new URLSearchParams({
+              ...params,
+              page: currentPage,
+              limit
+            })}`
+          );
+
+        } catch {
+          response = await fetch(
+            `${backendService.URL3}/api/get-question-papers-for-particular-year-semester-department?${new URLSearchParams({
+              ...params,
+              page: currentPage,
+              limit
+            })}`
+          );
         }
       }
 
       const result = await response.json();
 
-      // stop if no more data
-      if (result.data.length === 0) {
+      // ================= NO MORE DATA =================
+      if (!result.data || result.data.length === 0) {
 
         hasMore = false;
 
         loader.innerHTML = "";
-        tbody.parentElement.removeChild(loader);
-        renderQuestionPapers([
-          {
-            batch: "xx-xx",
-            paper: `${semesterLabel} Sem Internals`,
-            link: notFoundLink
-          }
-        ], true);
+
+        // optional fallback row
+        if (currentPage === 1) {
+
+          renderQuestionPapers([
+            {
+              batch: "xx-xx",
+              paper: `${semesterLabel} Sem Internals`,
+              link: notFoundLink
+            }
+          ], true);
+        }
 
         return;
       }
 
+      // ================= FORMAT DATA =================
       const newRows = result.data.map(item => ({
 
         batch: item.batch,
@@ -136,36 +151,56 @@ async function loadQuestionPapers({
         link: item.file_url
       }));
 
-      // keep your existing architecture
+      // ================= SAVE =================
       data.push(...newRows);
 
-      // append only new rows
+      // ================= APPEND =================
       renderQuestionPapers(newRows, true);
 
       currentPage++;
+
+      // ================= CHECK MORE =================
+      if (result.data.length < limit) {
+
+        hasMore = false;
+
+        loader.innerHTML = "";
+
+      } else {
+
+        loader.innerText = "Scroll for more...";
+      }
 
     } catch (error) {
 
       console.log("Server error:", error);
 
-      loader.innerText = "Server Error";
+      loader.innerHTML = "";
+      alert("Oops! An unexpected server error has occurred.");
+    }
 
-    } finally {
+    finally {
+
       loading = false;
     }
   }
 
-  // lazy loading
-  const observer = new IntersectionObserver(entries => {
+  // ================= WINDOW SCROLL =================
 
-    if (entries[0].isIntersecting) {
+  let scrollTimeout;
+
+  window.addEventListener("scroll", () => {
+
+    clearTimeout(scrollTimeout);
+
+    scrollTimeout = setTimeout(() => {
+
+      if (loading || !hasMore) return;
+
       fetchQuestionPapers();
-    }
 
+    }, 200);
   });
-
-  observer.observe(loader);
-
-  // initial fetch
+  // ================= INITIAL FETCH =================
   fetchQuestionPapers();
 }

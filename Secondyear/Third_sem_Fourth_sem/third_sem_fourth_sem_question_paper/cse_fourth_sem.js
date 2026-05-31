@@ -1,5 +1,4 @@
-
-const data = [
+const cse4thSemData = [
   {
     batch: "20-24",
     paper: "4th Sem Internal",
@@ -24,25 +23,16 @@ const data = [
     batch: "23-27",
     paper: "4th Sem Internal-1+2",
     link: "3rd_sem_4th_sem pdf/23_27_CSE_4th_Sem_Internal_1+2.pdf"
-  },
-  {
-    batch: "xx-xx",
-    paper: "4th Sem Internal-I",
-    link: "../../../NotFoundPage.html"
   }
 ];
 
-const tbody = document.getElementById("cse4thSemTableBody");
-
-data.forEach((item, index) => {
-  const tr = document.createElement("tr");
-
-  tr.innerHTML = `
-        <th scope="row">${index + 1}</th>
-        <td>${item.batch}</td>
-        <td>${item.paper}</td>
-        <td><a class="dwnld" href="${item.link}" target="_blank">Download</a></td>
-    `;
-
-  tbody.appendChild(tr);
+loadQuestionPapers({
+  tbodyId: "cse4thSemTableBody",
+  data: cse4thSemData,
+  semesterLabel: "4th",
+  params: {
+    year: "Second Year",
+    semester: "Fourth Semester",
+    department: "CSE"
+  }
 });

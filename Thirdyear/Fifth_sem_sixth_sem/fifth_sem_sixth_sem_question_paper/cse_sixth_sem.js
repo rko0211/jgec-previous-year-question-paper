@@ -1,4 +1,4 @@
-const data = [
+const cse6thSemData = [
   {
     batch: "19-23",
     paper: "6th Sem",
@@ -43,25 +43,16 @@ const data = [
     batch: "22-26",
     paper: "6th Sem",
     link: "5th_sem_6th_sem_pdf/22_26_CSE_6th_Sem-Writabrata Chakraborti.pdf"
-  },
-  {
-    batch: "xx-xx",
-    paper: "6th Sem",
-    link: "../../../NotFoundPage.html"
   }
 ];
 
-const tbody = document.getElementById("cse6thSemTableBody");
-
-data.forEach((item, index) => {
-  const tr = document.createElement("tr");
-
-  tr.innerHTML = `
-    <th scope="row">${index + 1}</th>
-    <td>${item.batch}</td>
-    <td>${item.paper}</td>
-    <td><a class="dwnld" href="${item.link}" target="_blank">Download</a></td>
-  `;
-
-  tbody.appendChild(tr);
+loadQuestionPapers({
+  tbodyId: "cse6thSemTableBody",
+  data: cse6thSemData,
+  semesterLabel: "6th",
+  params: {
+    year: "Third Year",
+    semester: "Sixth Semester",
+    department: "CSE"
+  }
 });

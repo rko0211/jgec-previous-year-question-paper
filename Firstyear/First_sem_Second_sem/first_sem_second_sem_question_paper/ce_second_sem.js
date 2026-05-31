@@ -24,6 +24,6 @@ loadQuestionPapers({
   params: {
     year: "First Year",
     semester: "Second Semester",
-    department: "CE"
+    department: "CIVIL"
   }
 });

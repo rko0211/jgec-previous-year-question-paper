@@ -27,6 +27,19 @@ const contributors = [
 
 const list = document.getElementById("contributorsList");
 
+// ================= LOADER =================
+const loader = document.getElementById("loadingContainer");
+
+// ================= PAGINATION =================
+let currentPage = 1;
+
+let loading = false;
+
+let hasMore = true;
+
+const limit = 5;
+
+// ================= CAPITALIZE =================
 function capitalizeName(name) {
 
   return name
@@ -34,23 +47,25 @@ function capitalizeName(name) {
     .split(" ")
     .filter(word => word.trim() !== "")
     .map(word =>
-      word.charAt(0).toUpperCase() + word.slice(1)
+      word.charAt(0).toUpperCase() +
+      word.slice(1)
     )
     .join(" ");
 }
 
-// remove duplicates (case-insensitive)
+// ================= REMOVE DUPLICATES =================
 function getUniqueContributors(data) {
 
   const uniqueMap = new Map();
 
   data.forEach(contributor => {
 
-    const formattedName = capitalizeName(contributor.name);
+    const formattedName =
+      capitalizeName(contributor.name);
 
-    const formattedUrl = contributor.url.trim();
+    const formattedUrl =
+      contributor.url.trim();
 
-    // unique key (case-insensitive)
     const key =
       formattedName.toLowerCase() +
       "|" +
@@ -68,84 +83,146 @@ function getUniqueContributors(data) {
   return [...uniqueMap.values()];
 }
 
-
-function renderContributors() {
-
-  list.innerHTML = "";
+// ================= RENDER =================
+function renderContributors(newContributors = []) {
 
   const uniqueContributors =
-    getUniqueContributors(contributors);
+    getUniqueContributors(newContributors);
 
-  uniqueContributors.forEach((contributor) => {
+  const fragment =
+    document.createDocumentFragment();
+
+  uniqueContributors.forEach(contributor => {
 
     const li = document.createElement("li");
 
     li.innerHTML = `
-      <a class="cntlink"
-         href="${contributor.url}"
-         target="_blank">
-         ${contributor.name}
+      <a
+        class="cntlink"
+        href="${contributor.url}"
+        target="_blank"
+      >
+        ${contributor.name}
       </a>
     `;
 
-    list.appendChild(li);
+    fragment.appendChild(li);
   });
+
+  list.appendChild(fragment);
 }
 
-// Initial render
-renderContributors();
+// ================= INITIAL RENDER =================
+renderContributors(contributors);
 
-
-
+// ================= FETCH =================
 async function loadContributors() {
+
+  if (loading || !hasMore) return;
+
+  loading = true;
+
+  loader.style.display = "block";
+  loader.innerText = "Loading...";
 
   try {
 
-    // primary backend
-    const response = await fetch(`${backendService.URL1}/api/get-linkdin-profiles`);
+    let response;
 
-    if (!response.ok) {
-      throw new Error("Server 1 failed");
+    // ================= PRIMARY =================
+    try {
+
+      response = await fetch(
+        `${backendService.URL1}/api/get-linkdin-profiles?${new URLSearchParams({
+          page: currentPage,
+          limit
+        })}`
+      );
+
+    } catch {
+
+      // ================= FALLBACK =================
+      try {
+
+        response = await fetch(
+          `${backendService.URL2}/api/get-linkdin-profiles?${new URLSearchParams({
+            page: currentPage,
+            limit
+          })}`
+        );
+
+      } catch {
+
+        response = await fetch(
+          `${backendService.URL3}/api/get-linkdin-profiles?${new URLSearchParams({
+            page: currentPage,
+            limit
+          })}`
+        );
+      }
     }
 
     const result = await response.json();
 
-    contributors.push(
-      ...result.data.map(item => ({
+    // ================= NO MORE DATA =================
+    if (!result.data || result.data.length === 0) {
+
+      hasMore = false;
+
+      loader.innerHTML = "";
+
+      return;
+    }
+
+    // ================= FORMAT =================
+    const newContributors =
+      result.data.map(item => ({
         name: item.name,
         url: item.linkedin
-      }))
-    );
+      }));
 
-  } catch (err1) {
+    // ================= SAVE =================
+    contributors.push(...newContributors);
 
-    try {
+    // ================= APPEND =================
+    renderContributors(newContributors);
 
-      // fallback backend
-      const response = await fetch(`${backendService.URL2}/api/get-linkdin-profiles`);
+    currentPage++;
 
-      if (!response.ok) {
-        throw new Error("Server 2 failed");
-      }
+    // ================= CHECK MORE =================
+    if (result.data.length < limit) {
 
-      const result = await response.json();
+      hasMore = false;
 
-      contributors.push(
-        ...result.data.map(item => ({
-          name: item.name,
-          url: item.linkedin
-        }))
-      );
+      loader.innerHTML = "";
 
-    } catch (err2) {
-      console.log("Server error: ", err2);
     }
+
+  } catch (error) {
+
+    console.log("Server error:", error);
+    alert("Oops! An unexpected server error has occurred.");
 
   } finally {
 
-    renderContributors();
+    loading = false;
   }
 }
 
+// ================= Fetch Interval =================
 
+const interval = setInterval(() => {
+
+  if (loading || !hasMore) return;
+
+  loadContributors();
+
+  // stop interval when no more data
+  if (!hasMore) {
+    clearInterval(interval);
+  }
+
+}, 200);
+
+// ================= INITIAL FETCH =================
 loadContributors();

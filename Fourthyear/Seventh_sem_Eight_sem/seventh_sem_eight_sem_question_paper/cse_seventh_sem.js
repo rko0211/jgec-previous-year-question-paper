@@ -1,4 +1,4 @@
-const data = [
+const cse7thSemData = [
   {
     batch: "18-22",
     paper: "7th Sem",
@@ -28,25 +28,16 @@ const data = [
     batch: "22-26",
     paper: "7th Sem",
     link: "7th_sem_8th_sem_pdf/22_26_CSE_7th_Sem-Writabrata Chakraborti.pdf"
-  },
-  {
-    batch: "xx-xx",
-    paper: "7th Sem",
-    link: "../../../NotFoundPage.html"
   }
 ];
 
-const tbody = document.getElementById("cse7thSemTableBody");
-
-data.forEach((item, index) => {
-  const tr = document.createElement("tr");
-
-  tr.innerHTML = `
-        <th scope="row">${index + 1}</th>
-        <td>${item.batch}</td>
-        <td>${item.paper}</td>
-        <td><a class="dwnld" href="${item.link}" target="_blank">Download</a></td>
-    `;
-
-  tbody.appendChild(tr);
+loadQuestionPapers({
+  tbodyId: "cse7thSemTableBody",
+  data: cse7thSemData,
+  semesterLabel: "7th",
+  params: {
+    year: "Fourth Year",
+    semester: "Seventh Semester",
+    department: "CSE"
+  }
 });

@@ -1,5 +1,5 @@
 // CE 4TH SEM INTERNAL + SEMESTER SECTION
-const data = [
+const ce4thSemData = [
   {
     batch: "20-24",
     paper: "4th Sem",
@@ -19,25 +19,16 @@ const data = [
     batch: "23-27",
     paper: "4th Sem",
     link: "./3rd_sem_4th_sem pdf/23_27_CE_4th_Sem - Rajdeep Khatik.pdf"
-  },
-  {
-    batch: "xx-xx",
-    paper: "4th Sem Internal-I",
-    link: "../../../NotFoundPage.html"
   }
 ];
 
-const tbody = document.getElementById("ce4thSemTableBody");
-
-data.forEach((item, index) => {
-  const tr = document.createElement("tr");
-
-  tr.innerHTML = `
-        <th scope="row">${index + 1}</th>
-        <td>${item.batch}</td>
-        <td>${item.paper}</td>
-        <td><a class="dwnld" href="${item.link}" target="_blank">Download</a></td>
-    `;
-
-  tbody.appendChild(tr);
+loadQuestionPapers({
+  tbodyId: "ce4thSemTableBody",
+  data: ce4thSemData,
+  semesterLabel: "4th",
+  params: {
+    year: "Second Year",
+    semester: "Fourth Semester",
+    department: "CIVIL"
+  }
 });

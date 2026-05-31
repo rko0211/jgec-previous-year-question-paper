@@ -154,6 +154,14 @@ li {
 
 }
 
+#loadingContainer {
+  text-align: center;
+  color: blue;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px;
+}
+
 .alert {
   padding: 20px;
   background-color: #f44336;

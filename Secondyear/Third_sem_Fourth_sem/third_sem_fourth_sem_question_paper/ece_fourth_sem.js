@@ -1,29 +1,18 @@
-const data = [
-
+const ece4thSemData = [
   {
     batch: "xx-xx",
     paper: "4th Sem",
     link: "../../../NotFoundPage.html"
-  },
-
-  {
-    batch: "xx-xx",
-    paper: "4th Sem Internal-I",
-    link: "../../../NotFoundPage.html"
   }
 ];
 
-const tbody = document.getElementById("ece4thSemTableBody");
-
-data.forEach((item, index) => {
-  const tr = document.createElement("tr");
-
-  tr.innerHTML = `
-        <th scope="row">${index + 1}</th>
-        <td>${item.batch}</td>
-        <td>${item.paper}</td>
-        <td><a class="dwnld" href="${item.link}" target="_blank">Download</a></td>
-    `;
-
-  tbody.appendChild(tr);
+loadQuestionPapers({
+  tbodyId: "ece4thSemTableBody",
+  data: ece4thSemData,
+  semesterLabel: "4th",
+  params: {
+    year: "Second Year",
+    semester: "Fourth Semester",
+    department: "ECE"
+  }
 });
