@@ -772,3 +772,71 @@ footer .f-ele1 span {
     margin-top: 80px;
   }
 }
+
+/* ============================================
+   SMOOTH TEXT RENDERING - ADD THIS
+   ============================================ */
+
+/* Apply to all text */
+body,
+p,
+h1,
+h2,
+h3,
+li,
+a,
+span {
+  font-smooth: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Better font family for smooth reading */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* Prevent text jumps and improve spacing */
+.container,
+.topic-1,
+.topic-2,
+.topic-3,
+.topic-4 {
+  word-break: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Improve paragraph readability */
+p,
+.text p,
+.text-1 p,
+.text-2 p,
+.text-3 p,
+.text-4 p {
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+}
+
+/* Improve heading smoothness */
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+/* Specific text containers */
+.text,
+.text-1,
+.text-2,
+.text-3,
+.text-4,
+.text-5 {
+  font-smooth: antialiased;
+  -webkit-font-smoothing: antialiased;
+}

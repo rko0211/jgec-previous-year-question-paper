@@ -4,8 +4,7 @@ class GitHubStarReminder {
       repoUrl: 'https://github.com/rko0211/jgec-previous-year-question-paper',
       title: 'Enjoying this project?',
       message: 'Give it a <b>⭐</b> on <b>GitHub</b> to support our work!',
-      showDelay: 2000,
-      localStorageKey: 'githubAlertDismissed',
+      showDelay: 500,
       ...options
     };
 
@@ -105,8 +104,8 @@ class GitHubStarReminder {
 
   init() {
     this.createAlert();
+    // Show on page load after delay
     setTimeout(() => this.showAlert(), this.options.showDelay);
-    this.setupScrollListener();
   }
 
   createAlert() {
@@ -145,16 +144,9 @@ class GitHubStarReminder {
   closeAlert() {
     this.overlay.style.display = 'none';
   }
-
-  setupScrollListener() {
-    window.addEventListener('scroll', () => {
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
-        this.showAlert();
-      }
-    });
-  }
 }
 
+// Initialize on page load
 document.addEventListener('DOMContentLoaded', function () {
   new GitHubStarReminder({
     repoUrl: 'https://github.com/rko0211/jgec-previous-year-question-paper'
