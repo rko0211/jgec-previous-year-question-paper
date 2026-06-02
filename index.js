@@ -42,17 +42,17 @@ serverHealthCheck();
 
 
 // =========================
-// Dark Mode with Time-Based Auto Switch
+// Dark Mode with Timed Override (2 hours)
 // =========================
 
 const card_p = document.getElementsByClassName("common");
 const toggleSwitch = document.getElementById("modeToggle");
+const OVERRIDE_DURATION = 12 * 60 * 60 * 1000; // 12 hours in milliseconds
 
 // Function to check if current time is between 6 PM (18:00) and 5 AM (05:00)
 function isNightTime() {
   const now = new Date();
   const hours = now.getHours();
-  // Night time: 18:00 (6 PM) to 05:00 (5 AM) next day
   return hours >= 18 || hours < 5;
 }
 
@@ -69,6 +69,7 @@ function applyTheme(theme, saveToStorage = true) {
     if (saveToStorage) {
       localStorage.setItem("theme", "dark");
       localStorage.setItem("themeSource", "user");
+      localStorage.setItem("overrideTimestamp", Date.now().toString());
     }
   } else {
     document.body.classList.remove("dark-mode");
@@ -81,6 +82,7 @@ function applyTheme(theme, saveToStorage = true) {
     if (saveToStorage) {
       localStorage.setItem("theme", "light");
       localStorage.setItem("themeSource", "user");
+      localStorage.setItem("overrideTimestamp", Date.now().toString());
     }
   }
 }
@@ -90,7 +92,7 @@ function getAutoTheme() {
   return isNightTime() ? "dark" : "light";
 }
 
-// Function to apply auto theme (without saving to storage)
+// Function to apply auto theme
 function applyAutoTheme() {
   const autoTheme = getAutoTheme();
   if (autoTheme === "dark") {
@@ -116,42 +118,42 @@ function applyAutoTheme() {
 function setInitialTheme() {
   const savedTheme = localStorage.getItem("theme");
   const themeSource = localStorage.getItem("themeSource");
+  const overrideTimestamp = localStorage.getItem("overrideTimestamp");
 
-  // If user has previously manually chosen a theme
-  if (savedTheme && themeSource === "user") {
-    applyTheme(savedTheme, false);
+  // Check if manual override is still valid
+  if (savedTheme && themeSource === "user" && overrideTimestamp) {
+    const timeSinceOverride = Date.now() - parseInt(overrideTimestamp);
+
+    if (timeSinceOverride < OVERRIDE_DURATION) {
+      // Override is still valid
+      applyTheme(savedTheme, false);
+    } else {
+      // Override expired, clear and use auto
+      localStorage.removeItem("theme");
+      localStorage.removeItem("themeSource");
+      localStorage.removeItem("overrideTimestamp");
+      applyAutoTheme();
+    }
   } else {
-    // Auto theme based on time
+    // Use time-based auto theme
     applyAutoTheme();
-    // Don't save auto theme to storage - let time decide
   }
 }
 
 // Manual theme switching by user
 function switchTheme(e) {
   if (e.target.checked) {
-    // User manually switched to dark mode
-    document.body.classList.add("dark-mode");
-    Array.from(card_p).forEach(card => {
-      card.classList.add("textBlack");
-    });
-    localStorage.setItem("theme", "dark");
-    localStorage.setItem("themeSource", "user");
+    applyTheme("dark");
   } else {
-    // User manually switched to light mode
-    document.body.classList.remove("dark-mode");
-    Array.from(card_p).forEach(card => {
-      card.classList.remove("textBlack");
-    });
-    localStorage.setItem("theme", "light");
-    localStorage.setItem("themeSource", "user");
+    applyTheme("light");
   }
 }
 
-// Optional: Add a "Reset to Auto" button functionality
+// Reset to auto theme
 function resetToAutoTheme() {
   localStorage.removeItem("theme");
   localStorage.removeItem("themeSource");
+  localStorage.removeItem("overrideTimestamp");
   applyAutoTheme();
 }
 
@@ -165,29 +167,41 @@ window.addEventListener("DOMContentLoaded", () => {
   setInitialTheme();
 });
 
-// Optional: Watch for time changes (every minute to auto-switch at 6 PM and 5 AM)
+// Watch for time changes and override expiration
 let lastHour = new Date().getHours();
 
 setInterval(() => {
   const currentHour = new Date().getHours();
   const themeSource = localStorage.getItem("themeSource");
+  const overrideTimestamp = localStorage.getItem("overrideTimestamp");
 
-  // Only auto-switch if user hasn't manually chosen a theme
-  if (themeSource !== "user") {
-    // Check if hour crossed the threshold (6 PM or 5 AM)
+  // Check if override has expired
+  if (themeSource === "user" && overrideTimestamp) {
+    const timeSinceOverride = Date.now() - parseInt(overrideTimestamp);
+    if (timeSinceOverride >= OVERRIDE_DURATION) {
+      // Override expired, clear and apply auto
+      localStorage.removeItem("theme");
+      localStorage.removeItem("themeSource");
+      localStorage.removeItem("overrideTimestamp");
+      applyAutoTheme();
+      return;
+    }
+  }
+
+  // Only auto-switch by time if no active manual override
+  if (themeSource !== "user" || (overrideTimestamp && (Date.now() - parseInt(overrideTimestamp)) >= OVERRIDE_DURATION)) {
     if (currentHour !== lastHour) {
       const wasNight = lastHour >= 18 || lastHour < 5;
       const isNowNight = currentHour >= 18 || currentHour < 5;
 
       if (wasNight !== isNowNight) {
-        // Time boundary crossed, update theme
         applyAutoTheme();
       }
-      lastHour = currentHour;
     }
   }
-}, 60000); // Check every minute
 
+  lastHour = currentHour;
+}, 60000);
 
 // =========================
 // Mobile Navbar
