@@ -9,35 +9,36 @@ async function serverHealthCheck() {
     `${backendService.URL3}/health`
   ];
 
-  try {
-    const results = await Promise.allSettled(
-      servers.map(async (url) => {
-        const response = await fetch(url, {
-          method: "GET",
-          cache: "no-cache"
-        });
+  const results = await Promise.allSettled(
+    servers.map(async (url) => {
+      const response = await fetch(url, {
+        method: "GET",
+        cache: "no-cache"
+      });
 
-        if (!response.ok) {
-          throw new Error(`${url} failed`);
-        }
+      if (!response.ok) {
+        throw new Error(`${url} failed with status ${response.status}`);
+      }
 
-        return url;
-      })
-    );
+      return { url, status: "healthy" };
+    })
+  );
 
-    const failedServers = results.filter(
-      result => result.status === "rejected"
-    );
+  const failedServers = results.filter(
+    result => result.status === "rejected"
+  );
 
-    if (failedServers.length === servers.length) {
-      console.error("All servers health check failed!");
-    }
-
-  } catch (err) {
-    console.error(err);
+  if (failedServers.length === servers.length) {
+    console.error("All servers health check failed!");
+  } else if (failedServers.length > 0) {
+    console.warn(`${failedServers.length} server(s) failed health check`);
   }
+
+  // Return results for caller to use
+  return results;
 }
 
+// Call fun on load the page
 serverHealthCheck();
 
 
