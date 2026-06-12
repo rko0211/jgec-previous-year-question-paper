@@ -67,16 +67,13 @@ function validateForm() {
 const handleForm = async (event) => {
   event.preventDefault(); // Prevent default form submission
 
-  const URL = `https://contact-form-backend-4sw0.onrender.com`;
 
   // Validate form before submission
   if (!validateForm()) {
     return;
   }
-
-
+  
   const btn = document.getElementById("btn");
-
 
   // Show spinner and disable button
   btn.style.display = "none";
@@ -87,17 +84,66 @@ const handleForm = async (event) => {
 
   const payload = { name, email, message };
 
-
-
   try {
-    const res = await fetch(`${URL}/api/contact`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(payload)
-    });
+    let res;
+    let responseOk = false;
+    let lastError = null;
 
+    // Try URL4 first
+    try {
+      console.log("Sending request to URL4", backendService.URL4);
+      res = await fetch(`${backendService.URL4}/api/contact-us`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      // Check if response is ok (status 200-299)
+      if (res.ok) {
+        responseOk = true;
+      } else {
+        // Store the error response but don't throw yet
+        lastError = { res, status: res.status };
+        console.warn(`URL4 returned status ${res.status}`);
+      }
+    } catch (networkError) {
+      // URL4 network failure (server down, timeout, etc.)
+      console.error("URL4 network error:", networkError);
+      lastError = networkError;
+    }
+
+    // If URL4 failed (either network error or bad status code), try URL5
+    if (!responseOk) {
+      try {
+        console.log("Trying URL5 as fallback", backendService.URL5);
+        res = await fetch(`${backendService.URL5}/api/contact-us`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (res.ok) {
+          responseOk = true;
+        } else {
+          lastError = { res, status: res.status };
+          console.warn(`URL5 returned status ${res.status}`);
+        }
+      } catch (networkError) {
+        console.error("URL5 network error:", networkError);
+        lastError = networkError;
+      }
+    }
+
+    // If both servers failed
+    if (!responseOk) {
+      throw lastError;
+    }
+
+    // Success - process the response
     const data = await res.json();
 
     if (res.status === 200) {
@@ -109,40 +155,40 @@ const handleForm = async (event) => {
       }).then(() => {
         document.getElementById("contact-form").reset();
       });
-    } else if (res.status === 400) {
+    }
+
+  } catch (err) {
+    console.error("Error:", err);
+
+    // Check if it's an HTTP error response with a status
+    if (err && err.res && err.res.status === 400) {
+      const data = await err.res.json();
       Swal.fire({
         title: "Warning!",
-        text: `${data.message}`,
+        text: `${data.message || "Validation failed"}`,
         icon: "warning",
         confirmButtonText: "OK"
       });
-    } else {
+    } else if (err && err.res && err.res.status === 500) {
+      const data = await err.res.json();
       Swal.fire({
-        title: "Error!",
-        text: `${data.message || "Something went wrong."}`,
+        title: "Server Error!",
+        text: `${data.message || "Internal server error. Please try again later."}`,
         icon: "error",
         confirmButtonText: "OK"
-      }).then(() => {
-        document.getElementById("contact-form").reset();
+      });
+    } else {
+      // Network error or unknown error
+      Swal.fire({
+        title: "Error!",
+        text: "Unable to connect to server. Please check your internet connection and try again.",
+        icon: "error",
+        confirmButtonText: "OK"
       });
     }
-  } catch (err) {
-    console.error("Error message:", err.message);
-    Swal.fire({
-      title: "Error!",
-      text: `${"Something Went Wrong. Please Try Again!" || data.message || err.message}`,
-      icon: "error",
-      confirmButtonText: "OK"
-    }).then(() => {
-      document.getElementById("contact-form").reset();
-    });
 
-  }
-  finally {
-    // Hide spinner and enable button
-
+  } finally {
     btn.style.display = "inline";
-
   }
 
 }

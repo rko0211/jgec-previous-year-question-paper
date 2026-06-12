@@ -6,7 +6,9 @@ async function serverHealthCheck() {
   const servers = [
     `${backendService.URL1}/health`,
     `${backendService.URL2}/health`,
-    `${backendService.URL3}/health`
+    `${backendService.URL3}/health`,
+    `${backendService.URL4}/health`,
+    `${backendService.URL5}/health`
   ];
 
   const results = await Promise.allSettled(
