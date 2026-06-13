@@ -19,7 +19,7 @@ function validateForm() {
 
   // Validate Name
   const name = document.getElementById("name").value;
-  if (name.length < 5) {
+  if (name.length < 2) {
     seterror("errormsg1", "*Length of name is too short");
     returnval = false;
   }
@@ -72,7 +72,7 @@ const handleForm = async (event) => {
   if (!validateForm()) {
     return;
   }
-  
+
   const btn = document.getElementById("btn");
 
   // Show spinner and disable button
@@ -91,7 +91,6 @@ const handleForm = async (event) => {
 
     // Try URL4 first
     try {
-      console.log("Sending request to URL4", backendService.URL4);
       res = await fetch(`${backendService.URL4}/api/contact-us`, {
         method: "POST",
         headers: {
@@ -106,18 +105,16 @@ const handleForm = async (event) => {
       } else {
         // Store the error response but don't throw yet
         lastError = { res, status: res.status };
-        console.warn(`URL4 returned status ${res.status}`);
+      
       }
     } catch (networkError) {
-      // URL4 network failure (server down, timeout, etc.)
-      console.error("URL4 network error:", networkError);
       lastError = networkError;
     }
 
     // If URL4 failed (either network error or bad status code), try URL5
     if (!responseOk) {
       try {
-        console.log("Trying URL5 as fallback", backendService.URL5);
+   
         res = await fetch(`${backendService.URL5}/api/contact-us`, {
           method: "POST",
           headers: {
@@ -130,10 +127,9 @@ const handleForm = async (event) => {
           responseOk = true;
         } else {
           lastError = { res, status: res.status };
-          console.warn(`URL5 returned status ${res.status}`);
         }
       } catch (networkError) {
-        console.error("URL5 network error:", networkError);
+
         lastError = networkError;
       }
     }
@@ -158,7 +154,6 @@ const handleForm = async (event) => {
     }
 
   } catch (err) {
-    console.error("Error:", err);
 
     // Check if it's an HTTP error response with a status
     if (err && err.res && err.res.status === 400) {
